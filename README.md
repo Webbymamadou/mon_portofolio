@@ -24,8 +24,8 @@ Ce portfolio est une application Web moderne conçue sous forme de **Single Page
 Le portfolio met en avant mes trois principaux projets orientés informatique de gestion et développement web :
 
 1.  **🚛 Verse (En cours) :** Une plateforme SaaS complète de gestion logistique pour les flottes de véhicules, la gestion de chauffeurs et le suivi analytique des versements (Laravel, React, PostgreSQL).
-2.  **📦 GestStock :** Application web dédiée à la gestion des stocks de marchandises et à la facturation automatisée en format PDF avec alertes intelligentes de seuil critique (Laravel, PostgreSQL, Bootstrap).
-3.  **💻 WebPilot :** Un générateur automatisé de sites vitrines légers pour les PME avec templates personnalisables et mini-CMS d'administration (Django, React, Celery, PostgreSQL).
+2.  **👥 GestRH :** Application web dédiée à la gestion des Ressources Humaines, de l'embauche à la fiche de paie en passant par les contrats de travail et la validation des congés (Laravel, PostgreSQL, Bootstrap).
+3.  **💻 Portfolio Professionnel :** Cette application même, présentant mes micro-animations, mes indicateurs circulaires en SVG et mon flux de build automatisé avec déploiement continu sur Vercel (React 19, Framer Motion, Sass).
 
 ---
 
