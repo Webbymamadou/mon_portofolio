@@ -46,7 +46,7 @@ export default function About() {
                 <div className="col-md-12 heading-section">
                   <span className="subheading">Mon introduction</span>
                   <h2 className="mb-4" style={{ fontSize: '34px', textTransform: 'capitalize' }}>À propos de moi</h2>
-                  <p>Je suis Mamadou Seck, étudiant en Licence 2 Informatique Appliquée à la Gestion des Entreprises (IAGE) à l’Institut Supérieur d’Informatique (ISI) après avoir complété ma Licence 1 en Génie Logiciel à l’Institut Polytechnique de Dakar (IPD). Passionné d'ingénierie backend et DevOps, je me spécialise dans la création d'architectures applicatives fiables (Java, Python Django/FastAPI), la conception de bases de données relationnelles optimisées (PostgreSQL, MySQL) et la conteneurisation d'infrastructures de développement (Docker, Docker Compose, Linux).</p>
+                  <p>Je suis Mamadou Seck, étudiant en Licence 2 Informatique Appliquée à la Gestion des Entreprises (IAGE) à l’Institut Supérieur d’Informatique (ISI) après avoir validé ma Licence 1 en Génie Logiciel à l’Institut Polytechnique de Dakar (IPD). Je me spécialise dans le développement backend (Python Django/FastAPI, PHP, et bases de Java/POO) et m'intéresse de près aux pratiques DevOps (Docker, Linux) et à la conception de bases de données relationnelles (PostgreSQL, MySQL).</p>
 
                   <ul className="about-info mt-4 px-md-0 px-2">
                     <li className="d-flex"><span>Nom :</span> <span>Mamadou Seck</span></li>
@@ -64,7 +64,7 @@ export default function About() {
                       <div className="icon d-flex align-items-center justify-content-center">
                         <span className="flaticon-computer"></span>
                       </div>
-                      <div className="text">Java (Spring)</div>
+                      <div className="text">Java (POO)</div>
                     </div>
                     <div className="interest-wrap d-flex align-items-center">
                       <div className="icon d-flex align-items-center justify-content-center">

@@ -9,7 +9,7 @@ const PROJECTS = [
     bg: '/images/work-1.jpg',
     tech: 'Django, React, Celery, PostgreSQL, Docker',
     features: 'Tâches asynchrones, génération automatique, automatisation du déploiement',
-    link: 'https://github.com/Webbymamadou/webbuilder-pme',
+    link: 'https://github.com/Webbymamadou/GIGRH_App',
     linkType: 'github',
     linkText: 'Code Source sur GitHub',
   },

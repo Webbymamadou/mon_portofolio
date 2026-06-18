@@ -73,6 +73,7 @@ h1, h2, h3, h4, h5,
 	left: 0;
 	right: 0;
 	z-index: 3;
+	transition: .3s all ease-out;
 	@include media-breakpoint-down(md) {
 		background: $black!important;
 		position: relative;
@@ -415,6 +416,10 @@ h1, h2, h3, h4, h5,
 				right: 0;
 				background: $black;
 				opacity: 0;
+				@include media-breakpoint-down(md) {
+					opacity: 0.75;
+					z-index: 0;
+				}
 			}
 			.slider-text {
 				height: 750px;
@@ -486,6 +491,10 @@ h1, h2, h3, h4, h5,
 					}
 					.text{
 						width: 100%;
+						margin-top: 0;
+						@include media-breakpoint-up(md) {
+							margin-top: -80px;
+						}
 						@include media-breakpoint-up(lg){
 							position: absolute;
 							top: 50%;
@@ -496,6 +505,7 @@ h1, h2, h3, h4, h5,
 							max-width: 60%;
 							padding-left: 45px;
 							padding-right: 3em;
+							margin-top: -170px;
 						}
 					}
 				}
@@ -520,13 +530,15 @@ h1, h2, h3, h4, h5,
 						font-weight: 800;
 						color: $primary;
 					}
+					@include media-breakpoint-down(lg) {
+						font-size: 42px;
+					}
 					@include media-breakpoint-down(md) {
 						color: $white;
-						font-size: 50px;
+						font-size: 32px;
 					}
 					@include media-breakpoint-down(sm) {
-						font-size: 40px;
-						// color: $pri;
+						font-size: 26px;
 					}
 				}
 				h2{
@@ -534,14 +546,18 @@ h1, h2, h3, h4, h5,
 					font-weight: 400;
 					@include media-breakpoint-down(md){
 						color: $white;
+						font-size: 22px;
 					}
 				}
 				p {
 					color: rgba(0,0,0,.8);
 					font-weight: 400;
 					@include media-breakpoint-down(md) {
-						color: rgba(255,255,255,.7);
-						font-size: 23px;
+						color: $white;
+						font-size: 15px;
+					}
+					@include media-breakpoint-down(sm) {
+						font-size: 14px;
 					}
 				}
 				.btn-custom{
@@ -820,6 +836,10 @@ h1, h2, h3, h4, h5,
 		width: 100%;
 		z-index: 0;
 		position: relative;
+		@include media-breakpoint-down(md){
+			height: 350px;
+			margin-bottom: 30px;
+		}
 		.img{
 			display: block;
 			width: 100%;
@@ -828,6 +848,9 @@ h1, h2, h3, h4, h5,
 			-webkit-box-shadow: -20px 20px 69px -27px rgba(0,0,0,0.33);
 			-moz-box-shadow: -20px 20px 69px -27px rgba(0,0,0,0.33);
 			box-shadow: -20px 20px 69px -27px rgba(0,0,0,0.33);
+			@include media-breakpoint-down(md){
+				height: 350px;
+			}
 		}
 	}
 	ul.about-info{
@@ -852,14 +875,19 @@ h1, h2, h3, h4, h5,
 	}
 	.my-interest{
 		margin-top: 30px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
 		.interest-wrap{
-			width: 25%;
+			width: calc(25% - 10px);
 			border-left: 2px solid $primary;
 			padding-left: 10px;
+			margin-bottom: 10px;
 			@include media-breakpoint-down(lg){
-				width: 50%;
-				float: left;
-				margin-bottom: 10px;
+				width: calc(50% - 10px);
+			}
+			@include media-breakpoint-down(sm){
+				width: 100%;
 			}
 			.icon{
 				width: 30px;
@@ -1165,8 +1193,8 @@ h1, h2, h3, h4, h5,
 		z-index: -1;
 		border-radius: 5px;
 		@include transition(.6s);
-		@include media-breakpoint-down(sm){
-			opacity: .2;
+		@include media-breakpoint-down(md){
+			opacity: .65;
 		}
 	}
 	.text{
@@ -1187,7 +1215,7 @@ h1, h2, h3, h4, h5,
 			letter-spacing: 1px;
 			font-weight: 600;
 		}
-		@include media-breakpoint-down(sm){
+		@include media-breakpoint-down(md){
 			opacity: 1;
 			span{
 				color: rgba(255,255,255,.8);

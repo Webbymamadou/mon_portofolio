@@ -74,4 +74,4 @@ Les fichiers optimisés et prêts pour le déploiement seront générés dans le
 
 *   **E-mail :** mamadouseck1357@gmail.com
 *   **Téléphone / WhatsApp :** +221 77 077 83 41
-*   **LinkedIn :** [Mamadou Seck](https://www.linkedin.com/in/mamadou-seck)
+*   **LinkedIn :** [Mamadou Seck](https://www.linkedin.com/in/mamadou-seck-39b953350/)

@@ -83,7 +83,7 @@ export default function Footer() {
               {/* Icônes de réseaux sociaux */}
               <ul className="ftco-footer-social list-unstyled mt-2">
                 <li>
-                  <a href="https://www.linkedin.com/in/mamadou-seck" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.linkedin.com/in/mamadou-seck-39b953350/" target="_blank" rel="noopener noreferrer">
                     <span className="icon fa fa-linkedin"></span>
                   </a>
                 </li>

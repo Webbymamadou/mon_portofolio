@@ -235,9 +235,9 @@ export default function Contact() {
             initial="hidden"
             animate={isVisible ? "visible" : "hidden"}
             variants={rightColumnVariants}
-            className="col-md-4 d-flex pl-md-5"
+            className="col-md-4 d-flex pl-md-5 mt-5 mt-md-0"
           >
-            <div className="row">
+            <div className="w-100">
               <div className="dbox w-100 d-flex mb-3">
                 <div className="icon d-flex align-items-center justify-content-center" style={{ background: '#3e64ff', color: '#fff', borderRadius: '50%', width: '40px', height: '40px' }}>
                   <span className="fa fa-map-marker"></span>
@@ -275,7 +275,7 @@ export default function Contact() {
                   <span className="fa fa-linkedin"></span>
                 </div>
                 <div className="text pl-3">
-                  <p className="mb-0"><span>LinkedIn :</span> <a href="https://www.linkedin.com/in/mamadou-seck" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                  <p className="mb-0"><span>LinkedIn :</span> <a href="https://www.linkedin.com/in/mamadou-seck-39b953350/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
                 </div>
               </div>
             </div>

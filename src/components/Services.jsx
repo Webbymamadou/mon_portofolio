@@ -6,22 +6,22 @@ const SERVICES = [
   {
     icon: 'flaticon-web-programming',
     title: 'Développement Backend & API',
-    desc: "Création d'APIs RESTful performantes et sécurisées avec Django (Python), FastAPI et Spring Boot (Java), avec authentification JWT."
+    desc: "Développement de modules backend avec Django, FastAPI et PHP, et conception d'applications en Java (bases & POO)."
   },
   {
     icon: 'flaticon-vector',
-    title: 'Conteneurisation & DevOps',
-    desc: 'Dockerisation complète d\'applications, automatisation CI/CD (GitHub Actions, GitLab CI/CD) et configuration de serveurs de déploiement Linux.'
+    title: 'Initiation DevOps',
+    desc: 'Mise en place de conteneurs pour les environnements locaux avec Docker / Docker Compose et initiation aux serveurs Linux.'
   },
   {
     icon: 'flaticon-computer',
     title: 'Conception & Gestion de BD',
-    desc: 'Conception, structuration (UML, Merise) et gestion avancée de bases de données relationnelles (PostgreSQL, MySQL) pour des performances optimales.'
+    desc: 'Modélisation de bases de données relationnelles avec les méthodes UML et Merise, et écriture de requêtes SQL (PostgreSQL, MySQL).'
   },
   {
     icon: 'flaticon-app-development',
-    title: 'Interfaces Frontend',
-    desc: 'Développement d\'interfaces utilisateur modernes et dynamiques à l\'aide de React et intégration avec Tailwind CSS pour un rendu fluide.'
+    title: "Tests & Documentation d'APIs",
+    desc: 'Validation des fonctionnalités des APIs avec Postman et rédaction de documentations claires avec Swagger / OpenAPI.'
   }
 ];
 

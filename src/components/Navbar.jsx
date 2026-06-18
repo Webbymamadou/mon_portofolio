@@ -61,11 +61,6 @@ export default function Navbar() {
         isScrolled ? 'scrolled' : ''
       } ${isAwake ? 'awake' : ''}`} 
       id="ftco-navbar"
-      style={{ 
-        position: isScrolled ? 'fixed' : 'absolute',
-        top: isScrolled && !isAwake ? '-130px' : '0px', 
-        transition: '0.3s all ease-out' 
-      }}
     >
       <div className="container">
         <a className="navbar-brand" href="#accueil-section" onClick={(e) => handleNavClick(e, 'accueil-section')}>
