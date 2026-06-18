@@ -18,11 +18,11 @@ export default function HireMe() {
             className="col-md-8 col-lg-8 d-flex align-items-center"
           >
             <div className="w-100 py-4">
-              <h2>Recherche d'alternance 2026-2027</h2>
-              <p>Je suis actuellement à la recherche d'une opportunité d'alternance d'un ou deux ans en tant que développeur d'applications de gestion ou concepteur web pour accompagner la transformation digitale de votre entreprise.</p>
+              <h2>Recherche d'alternance ou de stage</h2>
+              <p>Je suis actuellement à la recherche d'une opportunité d'alternance ou de stage en tant que développeur backend (Java/Python) ou DevOps junior pour contribuer à vos projets d'ingénierie logicielle et d'infrastructure.</p>
               <p className="mb-0">
                 <a 
-                  href="mailto:mamadouseck1357@gmail.com?subject=Proposition d'alternance 2026-2027" 
+                  href="mailto:mamadouseck1357@gmail.com?subject=Proposition d'alternance / stage" 
                   className="btn btn-white py-3 px-4"
                 >
                   Me contacter

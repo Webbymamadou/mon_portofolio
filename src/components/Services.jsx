@@ -5,23 +5,23 @@ import useIntersection from '../hooks/useIntersection';
 const SERVICES = [
   {
     icon: 'flaticon-web-programming',
-    title: 'Applications de Gestion',
-    desc: 'Conception et développement de solutions de gestion d\'entreprise robustes avec Laravel et Django.'
-  },
-  {
-    icon: 'flaticon-app-development',
-    title: 'Interfaces Modernes',
-    desc: 'Création d’interfaces de gestion fluides et réactives avec React, HTML, CSS et JavaScript.'
-  },
-  {
-    icon: 'flaticon-computer',
-    title: 'Modélisation & BD',
-    desc: 'Conception et administration de bases de données relationnelles avec PostgreSQL et MySQL (Merise / UML).'
+    title: 'Développement Backend & API',
+    desc: "Création d'APIs RESTful performantes et sécurisées avec Django (Python), FastAPI et Spring Boot (Java), avec authentification JWT."
   },
   {
     icon: 'flaticon-vector',
-    title: 'Gestion de Projet & ERP',
-    desc: 'Gestion agile (Scrum, Trello), modélisation des processus d\'affaires et initiation aux solutions ERP (Odoo).'
+    title: 'Conteneurisation & DevOps',
+    desc: 'Dockerisation complète d\'applications, automatisation CI/CD (GitHub Actions, GitLab CI/CD) et configuration de serveurs de déploiement Linux.'
+  },
+  {
+    icon: 'flaticon-computer',
+    title: 'Conception & Gestion de BD',
+    desc: 'Conception, structuration (UML, Merise) et gestion avancée de bases de données relationnelles (PostgreSQL, MySQL) pour des performances optimales.'
+  },
+  {
+    icon: 'flaticon-app-development',
+    title: 'Interfaces Frontend',
+    desc: 'Développement d\'interfaces utilisateur modernes et dynamiques à l\'aide de React et intégration avec Tailwind CSS pour un rendu fluide.'
   }
 ];
 
@@ -47,9 +47,9 @@ export default function Services() {
         {/* Titre de section */}
         <div className="row justify-content-center">
           <div className="col-md-12 heading-section text-center mb-5">
-            <span className="subheading">Mes domaines de compétence</span>
-            <h2 className="mb-4">Informatique de Gestion &amp; Applications</h2>
-            <p>Je me spécialise dans la création d'applications web de gestion et la modélisation de systèmes d'information robustes adaptés aux organisations.</p>
+            <span className="subheading">Mes domaines d'activité</span>
+            <h2 className="mb-4">Ingénierie Backend &amp; DevOps</h2>
+            <p>Je conçois des architectures backend robustes, des APIs performantes et j'automatise le déploiement et la maintenance de solutions logicielles.</p>
           </div>
         </div>
 

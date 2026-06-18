@@ -87,10 +87,10 @@ export default function Hero() {
                 >
                   <span className="subheading">Bonjour, je suis Mamadou Seck</span>
                   <h1 className="mb-4 mt-3" style={{ fontSize: '40px', lineHeight: '1.2' }}>
-                    Étudiant en IAGE | <span>Développeur Web &amp; Solutions de Gestion</span>
+                    Développeur Backend | <span>En devenir DevOps de haut niveau</span>
                   </h1>
                   <p className="mb-4" style={{ color: '#666', fontSize: '16px' }}>
-                    Étudiant en Licence 2 Informatique Appliquée à la Gestion des Entreprises (IAGE) à l'Institut Supérieur d'Informatique (ISI). Passionné par le développement d'applications web de gestion, la modélisation de bases de données et la transformation digitale des organisations. Je recherche une alternance pour l’année universitaire 2026-2027.
+                    Étudiant en Licence 2 Informatique Appliquée à la Gestion des Entreprises (IAGE) à l'Institut Supérieur d'Informatique (ISI). Passionné par l'ingénierie logicielle backend (Java, Python) et l'automatisation d'infrastructures cloud (Docker, CI/CD, serveurs Linux). Je recherche une alternance ou un stage pour mettre en pratique mes compétences et relever des défis techniques concrets.
                   </p>
                   <p>
                     <a href="#projects-section" onClick={(e) => handleScrollTo(e, 'projects-section')} className="btn btn-primary mr-2">

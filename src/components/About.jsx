@@ -46,7 +46,7 @@ export default function About() {
                 <div className="col-md-12 heading-section">
                   <span className="subheading">Mon introduction</span>
                   <h2 className="mb-4" style={{ fontSize: '34px', textTransform: 'capitalize' }}>À propos de moi</h2>
-                  <p>Je suis Mamadou Seck, étudiant en Licence 2 Informatique Appliquée à la Gestion des Entreprises (IAGE) à l’Institut Supérieur d’Informatique (ISI). Passionné par le développement d’applications de gestion, la modélisation de bases de données et les architectures web modernes. À travers mes projets académiques et personnels, j’ai acquis une solide maîtrise de Laravel, React, PostgreSQL et des outils de gestion de projet. Mon objectif est d'intégrer une alternance afin de contribuer à l'optimisation des systèmes d'information des entreprises.</p>
+                  <p>Je suis Mamadou Seck, étudiant en Licence 2 Informatique Appliquée à la Gestion des Entreprises (IAGE) à l’Institut Supérieur d’Informatique (ISI) après avoir complété ma Licence 1 en Génie Logiciel à l’Institut Polytechnique de Dakar (IPD). Passionné d'ingénierie backend et DevOps, je me spécialise dans la création d'architectures applicatives fiables (Java, Python Django/FastAPI), la conception de bases de données relationnelles optimisées (PostgreSQL, MySQL) et la conteneurisation d'infrastructures de développement (Docker, Docker Compose, Linux).</p>
 
                   <ul className="about-info mt-4 px-md-0 px-2">
                     <li className="d-flex"><span>Nom :</span> <span>Mamadou Seck</span></li>
@@ -64,25 +64,25 @@ export default function About() {
                       <div className="icon d-flex align-items-center justify-content-center">
                         <span className="flaticon-computer"></span>
                       </div>
-                      <div className="text">Laravel</div>
+                      <div className="text">Java (Spring)</div>
                     </div>
                     <div className="interest-wrap d-flex align-items-center">
                       <div className="icon d-flex align-items-center justify-content-center">
                         <span className="flaticon-web-programming"></span>
                       </div>
-                      <div className="text">Django</div>
+                      <div className="text">Python (Django)</div>
                     </div>
                     <div className="interest-wrap d-flex align-items-center">
                       <div className="icon d-flex align-items-center justify-content-center">
                         <span className="flaticon-vector"></span>
                       </div>
-                      <div className="text">React</div>
+                      <div className="text">Docker (DevOps)</div>
                     </div>
                     <div className="interest-wrap d-flex align-items-center">
                       <div className="icon d-flex align-items-center justify-content-center">
                         <span className="flaticon-app-development"></span>
                       </div>
-                      <div className="text">Gestion &amp; ERP</div>
+                      <div className="text">PostgreSQL (SQL)</div>
                     </div>
                   </div>
                 </div>

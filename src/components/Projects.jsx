@@ -4,23 +4,22 @@ import useIntersection from '../hooks/useIntersection';
 
 const PROJECTS = [
   {
-    title: 'Verse',
-    subtitle: 'Plateforme SaaS de gestion logistique',
+    title: 'SaaS WebBuilder PME',
+    subtitle: 'Générateur de sites web pour PME',
     bg: '/images/work-1.jpg',
-    tech: 'Laravel, React, PostgreSQL',
-    features: 'Véhicules, Chauffeurs, Versements, Dashboard',
-    link: 'https://github.com/Webbymamadou/verse',
+    tech: 'Django, React, Celery, PostgreSQL, Docker',
+    features: 'Tâches asynchrones, génération automatique, automatisation du déploiement',
+    link: 'https://github.com/Webbymamadou/webbuilder-pme',
     linkType: 'github',
     linkText: 'Code Source sur GitHub',
-    status: 'en-cours',
   },
   {
-    title: 'GIGRH',
-    subtitle: 'Application de gestion des Ressources Humaines',
+    title: 'DevConnect',
+    subtitle: 'Plateforme collaborative pour développeurs',
     bg: '/images/work-5.jpg',
-    tech: 'Laravel, PostgreSQL, Bootstrap',
-    features: 'Contrats, fiches de paie, demandes de congés, suivi des employés',
-    link: 'https://github.com/Webbymamadou/GIGRH_App',
+    tech: 'Django, FastAPI, PostgreSQL, Docker, Tailwind CSS',
+    features: 'APIs RESTful, authentification JWT, migration PostgreSQL, Docker Compose',
+    link: 'https://github.com/Webbymamadou/DevConnect',
     linkType: 'github',
     linkText: 'Code Source sur GitHub',
   },
@@ -28,9 +27,9 @@ const PROJECTS = [
     title: 'Portfolio Professionnel',
     subtitle: 'Ce site même (Vitrine & Réalisations)',
     bg: '/images/work-3.jpg',
-    tech: 'React 19, Framer Motion, Sass',
-    features: 'Micro-animations, responsive, jauge circulaire SVG, Vercel CI/CD',
-    link: 'https://github.com/Webbymamadou/mon-portfolio',
+    tech: 'React 19, Framer Motion, Sass, GitHub Actions',
+    features: 'Jauges circulaires SVG animées, workflow CI/CD, responsive design',
+    link: 'https://github.com/Webbymamadou/mon_portofolio',
     linkType: 'github',
     linkText: 'Code Source sur GitHub',
   }
@@ -53,7 +52,7 @@ export default function Projects() {
           <div className="col-md-12 heading-section text-center">
             <span className="subheading">Accomplissements</span>
             <h2 className="mb-4">Mes Projets</h2>
-            <p>Je suis fier d’avoir accompli plusieurs projets qui m’ont permis de développer mes compétences en développement web et d’acquérir une expérience pratique solide. Voici un aperçu de mes travaux majeurs.</p>
+            <p>Découvrez mes réalisations majeures en ingénierie backend, architectures d'API, intégration DevOps et développement d'applications collaboratives.</p>
           </div>
         </div>
 
