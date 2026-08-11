@@ -2,7 +2,7 @@ import React from 'react';
 import useIntersection from '../hooks/useIntersection';
 import useCountUp from '../hooks/useCountUp';
 
-function StatItem({ icon, target, text, trigger, duration }) {
+function StatItem({ icon, target, text, trigger, duration, prefix = '', suffix = '' }) {
   const count = useCountUp(target, duration, trigger);
   return (
     <div className="col-md-3 justify-content-center counter-wrap">
@@ -11,7 +11,7 @@ function StatItem({ icon, target, text, trigger, duration }) {
           <span className={icon}></span>
         </div>
         <div className="text">
-          <strong className="number">{count}</strong>
+          <strong className="number">{prefix}{count}{suffix}</strong>
           <span>{text}</span>
         </div>
       </div>
@@ -38,6 +38,8 @@ export default function Stats() {
               key={i} 
               icon={stat.icon} 
               target={stat.target} 
+              prefix={stat.prefix}
+              suffix={stat.suffix}
               text={stat.text} 
               trigger={isVisible} 
               duration={stat.duration}

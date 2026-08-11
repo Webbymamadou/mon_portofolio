@@ -89,7 +89,7 @@ export default function Hero() {
                     Backend Developer &amp; DevOps | <span>Python, Docker, Linux</span>
                   </h1>
                   <p className="mb-4">
-                    Étudiant en Licence 3 Informatique Appliquée à la Gestion des Entreprises (IAGE) à l'Institut Supérieur d'Informatique (ISI). Passionné par le développement backend (Python, Java, PHP) et l'initiation aux pratiques DevOps (Docker, Git, serveurs Linux, CI/CD). Je recherche une alternance ou un stage pour consolider mes compétences et contribuer à des projets concrets.
+                    Futur diplômé à l'ISI Dakar (L3 IAGE), j'associe l'ingénierie Backend Python à une réelle culture DevOps et entrepreneuriat. De la modélisation de bases de données à la conteneurisation Docker et l'automatisation CI/CD, j'apporte une double compétence : du code propre et une vision orientée résultat. Disponible pour une alternance en 2026-2027.
                   </p>
                   <p>
                     <a href="#projects-section" onClick={(e) => handleScrollTo(e, 'projects-section')} className="btn btn-primary mr-2">
