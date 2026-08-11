@@ -23,10 +23,10 @@ export default function Stats() {
   const [ref, isVisible] = useIntersection({ threshold: 0.1, triggerOnce: true });
 
   const stats = [
-    { icon: 'flaticon-suitcase', target: 3, text: 'Projets réalisés & en cours', duration: 1500 },
-    { icon: 'flaticon-computer', target: 6, text: 'Technologies maîtrisées', duration: 1500 },
-    { icon: 'flaticon-web-programming', target: 4, text: 'Frameworks utilisés', duration: 1500 },
-    { icon: 'flaticon-calendar', target: 2026, text: 'Alternance 2026-2027', duration: 2500 },
+    { icon: 'flaticon-suitcase', target: 100, suffix: '%', text: 'Mindset Entrepreneur & Vision Produit', duration: 1500 },
+    { icon: 'flaticon-computer', target: 360, suffix: '°', text: 'Culture DevOps, CI/CD & Cloud', duration: 1500 },
+    { icon: 'flaticon-web-programming', target: 100, suffix: '%', text: 'Automatisation & Rigueur de Code', duration: 1500 },
+    { icon: 'flaticon-calendar', target: 2026, suffix: '', text: 'Prêt pour l’Alternance 2026-2027', duration: 2500 },
   ];
 
   return (

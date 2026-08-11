@@ -27,19 +27,19 @@ export default function Contact() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.access_key === '46d90558-6651-4d22-a373-40e41fde4b64' || formData.access_key.trim() === '') {
+    if (!formData.access_key || formData.access_key.trim() === '' || formData.access_key === 'YOUR_ACCESS_KEY_HERE') {
       setStatus({
         submitted: false,
         submitting: false,
         info: { 
           error: true, 
           type: 'warning',
-          //msg: (
-           // <>
-             // <span className="fa fa-warning mr-2"></span> 
-             // <strong>Attention :</strong> Veuillez générer votre clé d'accès gratuite sur <a href="https://web3forms.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#3e64ff', textDecoration: 'underline', fontWeight: 600 }}>web3forms.com</a> et la coller dans votre composant Contact.
-            //</>
-          //)
+          msg: (
+            <>
+              <span className="fa fa-warning mr-2"></span> 
+              <strong>Attention :</strong> Veuillez générer votre clé d'accès gratuite sur <a href="https://web3forms.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#3e64ff', textDecoration: 'underline', fontWeight: 600 }}>web3forms.com</a> et la coller dans votre composant Contact.
+            </>
+          )
         }
       });
       return;
