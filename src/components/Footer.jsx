@@ -107,7 +107,7 @@ export default function Footer() {
         <div className="row">
           <div className="col-md-12 text-center">
             <p>
-              Copyright &copy; {currentYear} Tous droits réservés | Mon Portfolio - Votre partenaire <i className="fa fa-heart" aria-hidden="true" style={{ color: '#3e64ff' }}></i>
+              Copyright &copy; {currentYear} Tous droits réservés | Mon Portfolio - Votre partenaire !!
             </p>
           </div>
         </div>

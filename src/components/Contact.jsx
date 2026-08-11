@@ -6,7 +6,7 @@ export default function Contact() {
   const [ref, isVisible] = useIntersection({ threshold: 0.1, triggerOnce: true });
   
   const [formData, setFormData] = useState({
-    access_key: 'VOTRE_CLE_ACCESS_KEY_ICI',
+    access_key: '46d90558-6651-4d22-a373-40e41fde4b64',
     name: '',
     email: '',
     subject: '',
@@ -27,19 +27,19 @@ export default function Contact() {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    if (formData.access_key === 'VOTRE_CLE_ACCESS_KEY_ICI' || formData.access_key.trim() === '') {
+    if (formData.access_key === '46d90558-6651-4d22-a373-40e41fde4b64' || formData.access_key.trim() === '') {
       setStatus({
         submitted: false,
         submitting: false,
         info: { 
           error: true, 
           type: 'warning',
-          msg: (
-            <>
-              <span className="fa fa-warning mr-2"></span> 
-              <strong>Attention :</strong> Veuillez générer votre clé d'accès gratuite sur <a href="https://web3forms.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#3e64ff', textDecoration: 'underline', fontWeight: 600 }}>web3forms.com</a> et la coller dans votre composant Contact.
-            </>
-          )
+          //msg: (
+           // <>
+             // <span className="fa fa-warning mr-2"></span> 
+             // <strong>Attention :</strong> Veuillez générer votre clé d'accès gratuite sur <a href="https://web3forms.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#3e64ff', textDecoration: 'underline', fontWeight: 600 }}>web3forms.com</a> et la coller dans votre composant Contact.
+            //</>
+          //)
         }
       });
       return;
@@ -243,7 +243,7 @@ export default function Contact() {
                   <span className="fa fa-map-marker"></span>
                 </div>
                 <div className="text pl-3">
-                  <p className="mb-0"><span>Adresse :</span> Boop, Dakar, Sénégal</p>
+                  <p className="mb-0"><span>Adresse :</span> Zak Mbao, Dakar, Sénégal</p>
                 </div>
               </div>
               <div className="dbox w-100 d-flex mb-3">

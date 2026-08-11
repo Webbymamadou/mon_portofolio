@@ -5,23 +5,23 @@ import useIntersection from '../hooks/useIntersection';
 const SERVICES = [
   {
     icon: 'flaticon-web-programming',
-    title: 'Développement Backend & API',
-    desc: "Développement de modules backend avec Django, FastAPI et PHP, et conception d'applications en Java (bases & POO)."
-  },
-  {
-    icon: 'flaticon-vector',
-    title: 'Initiation DevOps',
-    desc: 'Mise en place de conteneurs pour les environnements locaux avec Docker / Docker Compose et initiation aux serveurs Linux.'
+    title: 'Développement Backend Python',
+    desc: "Développement d'API REST avec Django, Django REST Framework et FastAPI : modélisation ORM, authentification JWT, documentation Swagger / OpenAPI."
   },
   {
     icon: 'flaticon-computer',
     title: 'Conception & Gestion de BD',
-    desc: 'Modélisation de bases de données relationnelles avec les méthodes UML et Merise, et écriture de requêtes SQL (PostgreSQL, MySQL).'
+    desc: 'Modélisation de bases de données relationnelles avec UML et Merise, écriture de requêtes SQL sur PostgreSQL et MySQL.'
+  },
+  {
+    icon: 'flaticon-vector',
+    title: 'DevOps & Conteneurisation',
+    desc: 'Conteneurisation avec Docker / Docker Compose, déploiement sur serveurs Linux, reverse proxy Nginx et notions de CI/CD avec GitHub Actions.'
   },
   {
     icon: 'flaticon-app-development',
-    title: "Tests & Documentation d'APIs",
-    desc: 'Validation des fonctionnalités des APIs avec Postman et rédaction de documentations claires avec Swagger / OpenAPI.'
+    title: 'Intégration & Outils',
+    desc: "Intégration frontend avec HTML, CSS et Bootstrap, gestion de versions avec Git/GitHub, tests d'APIs avec Postman."
   }
 ];
 

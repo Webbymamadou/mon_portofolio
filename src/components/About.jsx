@@ -46,12 +46,10 @@ export default function About() {
                 <div className="col-md-12 heading-section">
                   <span className="subheading">Mon introduction</span>
                   <h2 className="mb-4" style={{ fontSize: '34px', textTransform: 'capitalize' }}>À propos de moi</h2>
-                  <p>Je suis Mamadou Seck, étudiant en Licence 2 Informatique Appliquée à la Gestion des Entreprises (IAGE) à l’Institut Supérieur d’Informatique (ISI) après avoir validé ma Licence 1 en Génie Logiciel à l’Institut Polytechnique de Dakar (IPD). Je me spécialise dans le développement backend (Python Django/FastAPI, PHP, et bases de Java/POO) et m'intéresse de près aux pratiques DevOps (Docker, Linux) et à la conception de bases de données relationnelles (PostgreSQL, MySQL).</p>
-
+                   <p>Étudiant en Licence 2 Informatique Appliquée à la Gestion (ISI Dakar), après une première année en Génie Logiciel (IPD), je spécialise mon profil dans le développement Backend Python et les pratiques DevOps.Spécialisé dans l'écosystème Python (Django, FastAPI, DRF), je maîtrise la conception de bases de données relationnelles (PostgreSQL, MySQL) ainsi que la conteneurisation et le déploiement (Docker, Linux, Nginx).Je recherche actuellement une opportunité (stage / projet) pour mettre en pratique mes compétences et contribuer à la conception d'applications robustes et évolutives.</p>
                   <ul className="about-info mt-4 px-md-0 px-2">
                     <li className="d-flex"><span>Nom :</span> <span>Mamadou Seck</span></li>
-                    <li className="d-flex"><span>Date de naissance :</span> <span>06 avril 2005</span></li>
-                    <li className="d-flex"><span>Adresse :</span> <span>Sénégal, Dakar, Boop</span></li>
+                    <li className="d-flex"><span>Adresse :</span> <span>Sénégal, Dakar, Zac Mbao</span></li>
                     <li className="d-flex"><span>E-mail :</span> <span>mamadouseck1357@gmail.com</span></li>
                     <li className="d-flex"><span>Téléphone :</span> <span>+221 77 077 83 41</span></li>
                   </ul>
@@ -62,31 +60,30 @@ export default function About() {
                   <div className="my-interest d-lg-flex w-100">
                     <div className="interest-wrap d-flex align-items-center">
                       <div className="icon d-flex align-items-center justify-content-center">
-                        <span className="flaticon-computer"></span>
-                      </div>
-                      <div className="text">Java (POO)</div>
-                    </div>
-                    <div className="interest-wrap d-flex align-items-center">
-                      <div className="icon d-flex align-items-center justify-content-center">
                         <span className="flaticon-web-programming"></span>
                       </div>
-                      <div className="text">Python (Django)</div>
-                    </div>
-                    <div className="interest-wrap d-flex align-items-center">
-                      <div className="icon d-flex align-items-center justify-content-center">
-                        <span className="flaticon-vector"></span>
-                      </div>
-                      <div className="text">Docker (DevOps)</div>
+                      <div className="text">Python (Django, FastAPI, DRF, ORM)</div>
                     </div>
                     <div className="interest-wrap d-flex align-items-center">
                       <div className="icon d-flex align-items-center justify-content-center">
                         <span className="flaticon-app-development"></span>
                       </div>
-                      <div className="text">PostgreSQL (SQL)</div>
+                      <div className="text">Bases de données (PostgreSQL, MySQL, SQL)</div>
+                    </div>
+                    <div className="interest-wrap d-flex align-items-center">
+                      <div className="icon d-flex align-items-center justify-content-center">
+                        <span className="flaticon-vector"></span>
+                      </div>
+                      <div className="text">DevOps (Docker, Linux, Nginx, CI/CD)</div>
+                    </div>
+                    <div className="interest-wrap d-flex align-items-center">
+                      <div className="icon d-flex align-items-center justify-content-center">
+                        <span className="flaticon-computer"></span>
+                      </div>
+                      <div className="text">Outils (Git, GitHub, Postman)</div>
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </motion.div>

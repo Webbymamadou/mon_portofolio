@@ -86,10 +86,10 @@ export default function Hero() {
                 >
                   <span className="subheading">Bonjour, je suis Mamadou Seck</span>
                   <h1 className="mb-4 mt-3" style={{ fontSize: '40px', lineHeight: '1.2' }}>
-                    Futur Backend Developer &amp; DevOps | <span>Python, Docker, Linux</span>
+                    Backend Developer &amp; DevOps | <span>Python, Docker, Linux</span>
                   </h1>
                   <p className="mb-4">
-                    Étudiant en Licence 2 Informatique Appliquée à la Gestion des Entreprises (IAGE) à l'Institut Supérieur d'Informatique (ISI). Passionné par le développement backend (Python, Java, PHP) et l'initiation aux pratiques DevOps (Docker, Git, serveurs Linux). Je recherche une alternance ou un stage pour consolider mes compétences et contribuer à des projets concrets.
+                    Étudiant en Licence 3 Informatique Appliquée à la Gestion des Entreprises (IAGE) à l'Institut Supérieur d'Informatique (ISI). Passionné par le développement backend (Python, Java, PHP) et l'initiation aux pratiques DevOps (Docker, Git, serveurs Linux, CI/CD). Je recherche une alternance ou un stage pour consolider mes compétences et contribuer à des projets concrets.
                   </p>
                   <p>
                     <a href="#projects-section" onClick={(e) => handleScrollTo(e, 'projects-section')} className="btn btn-primary mr-2">

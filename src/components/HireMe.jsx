@@ -19,7 +19,7 @@ export default function HireMe() {
           >
             <div className="w-100 py-4">
               <h2>Recherche d'alternance ou de stage</h2>
-              <p>Je suis actuellement à la recherche d'une opportunité d'alternance ou de stage en tant que développeur backend (Java/Python) ou DevOps junior pour contribuer à vos projets d'ingénierie logicielle et d'infrastructure.</p>
+              <p>Je suis actuellement à la recherche d'une opportunité d'alternance ou de stage en tant que développeur backend (Python, Django, FastApi, Docker) ou DevOps junior pour contribuer à vos projets d'ingénierie logicielle et d'infrastructure.</p>
               <p className="mb-0">
                 <a 
                   href="mailto:mamadouseck1357@gmail.com?subject=Proposition d'alternance / stage" 

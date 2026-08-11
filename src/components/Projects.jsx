@@ -32,7 +32,27 @@ const PROJECTS = [
     link: 'https://github.com/Webbymamadou/mon_portofolio',
     linkType: 'github',
     linkText: 'Code Source sur GitHub',
-  }
+  },
+  {
+    title: 'DistriManager',
+    subtitle: 'Application de gestion intégrée pour entreprise de distribution',
+    bg: '/images/work-2.jpg',
+    tech: 'Django REST Framework, HTML5/CSS3 (Tailwind), JavaScript, PostgreSQL',
+    features: 'Gestion clients & stocks multi-entrepôts, prise de commande bureau + terrain, tableau de bord, gestion des rôles (RBAC)',
+    link: null,
+    linkType: 'private',
+    linkText: 'Projet client — dépôt privé',
+  },
+  {
+    title: 'KP — Librairie Papeterie',
+    subtitle: 'Site vitrine multi-boutiques avec espace de gestion',
+    bg: '/images/work-4.jpg',
+    tech: 'Django REST Framework, PostgreSQL, React (Vite), JWT',
+    features: 'Catalogue par boutique avec recherche/filtres, commande directe via WhatsApp, espace de gestion sécurisé par boutique',
+    link: null,
+    linkType: 'private',
+    linkText: 'Projet client — dépôt privé',
+  },
 ];
 
 export default function Projects() {
@@ -58,84 +78,131 @@ export default function Projects() {
 
         {/* Grille de projets */}
         <div className="row">
-          {PROJECTS.map((project, index) => (
-            <motion.div 
-              key={index}
-              variants={cardVariants}
-              initial="hidden"
-              animate={isVisible ? "visible" : "hidden"}
-              className="col-md-4"
-            >
-              <div 
-                className="project img shadow d-flex justify-content-center align-items-center rounded mb-4" 
-                style={{ 
-                  backgroundImage: `url(${project.bg})`, 
-                  height: '350px',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  position: 'relative'
-                }}
+          {PROJECTS.map((project, index) => {
+            const isPrivate = project.linkType === 'private' || !project.link;
+
+            return (
+              <motion.div 
+                key={index}
+                variants={cardVariants}
+                initial="hidden"
+                animate={isVisible ? "visible" : "hidden"}
+                className="col-md-4"
               >
-                {project.status === 'en-cours' && (
-                  <span 
-                    style={{ 
-                      position: 'absolute', 
-                      top: '15px', 
-                      right: '15px', 
-                      background: '#ffbd39', 
-                      color: '#000', 
-                      padding: '4px 10px', 
-                      borderRadius: '4px', 
-                      fontSize: '11px', 
-                      fontWeight: '700', 
-                      textTransform: 'uppercase',
-                      letterSpacing: '1px',
-                      zIndex: 2,
-                      boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
-                    }}
-                  >
-                    En cours
-                  </span>
-                )}
-                <div className="overlay"></div>
-                <div className="text text-center p-4">
-                  <h3>
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      {project.title}
-                    </a>
-                  </h3>
-                  <span className="text-white opacity-80" style={{ display: 'block', marginBottom: '10px' }}>
-                    {project.subtitle}
-                  </span>
-                  
-                  <div className="mt-3 text-white" style={{ fontSize: '13px', lineHeight: '1.5' }}>
-                    <strong>Technologies :</strong> {project.tech}<br />
-                    {project.features && (
-                      <>
-                        <strong>Fonctionnalités :</strong> {project.features}<br />
-                      </>
-                    )}
-                    
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                <div 
+                  className="project img shadow d-flex justify-content-center align-items-center rounded mb-4" 
+                  style={{ 
+                    backgroundImage: `url(${project.bg})`, 
+                    height: '350px',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    position: 'relative'
+                  }}
+                >
+                  {project.status === 'en-cours' && (
+                    <span 
                       style={{ 
-                        color: '#a5b4fc', 
-                        textDecoration: 'none', 
-                        fontWeight: '600', 
-                        fontSize: '13px', 
-                        display: 'inline-block', 
-                        marginTop: '8px' 
+                        position: 'absolute', 
+                        top: '15px', 
+                        right: '15px', 
+                        background: '#ffbd39', 
+                        color: '#000', 
+                        padding: '4px 10px', 
+                        borderRadius: '4px', 
+                        fontSize: '11px', 
+                        fontWeight: '700', 
+                        textTransform: 'uppercase',
+                        letterSpacing: '1px',
+                        zIndex: 2,
+                        boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
                       }}
                     >
-                      <span className="fa fa-github mr-1"></span> {project.linkText}
-                    </a>
+                      En cours
+                    </span>
+                  )}
+
+                  {isPrivate && (
+                    <span
+                      style={{
+                        position: 'absolute',
+                        top: '15px',
+                        left: '15px',
+                        background: 'rgba(255,255,255,0.15)',
+                        border: '1px solid rgba(255,255,255,0.4)',
+                        color: '#fff',
+                        padding: '4px 10px',
+                        borderRadius: '4px',
+                        fontSize: '11px',
+                        fontWeight: '700',
+                        textTransform: 'uppercase',
+                        letterSpacing: '1px',
+                        zIndex: 2,
+                        backdropFilter: 'blur(2px)'
+                      }}
+                    >
+                      Client — Prod
+                    </span>
+                  )}
+
+                  <div className="overlay"></div>
+                  <div className="text text-center p-4">
+                    <h3>
+                      {isPrivate ? (
+                        project.title
+                      ) : (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer">
+                          {project.title}
+                        </a>
+                      )}
+                    </h3>
+                    <span className="text-white opacity-80" style={{ display: 'block', marginBottom: '10px' }}>
+                      {project.subtitle}
+                    </span>
+                    
+                    <div className="mt-3 text-white" style={{ fontSize: '13px', lineHeight: '1.5' }}>
+                      <strong>Technologies :</strong> {project.tech}<br />
+                      {project.features && (
+                        <>
+                          <strong>Fonctionnalités :</strong> {project.features}<br />
+                        </>
+                      )}
+
+                      {isPrivate ? (
+                        <span
+                          style={{
+                            color: '#cbd5e1',
+                            fontWeight: '600',
+                            fontSize: '13px',
+                            display: 'inline-block',
+                            marginTop: '8px',
+                            fontStyle: 'italic'
+                          }}
+                        >
+                          <span className="fa fa-lock mr-1"></span> {project.linkText}
+                        </span>
+                      ) : (
+                        <a 
+                          href={project.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          style={{ 
+                            color: '#a5b4fc', 
+                            textDecoration: 'none', 
+                            fontWeight: '600', 
+                            fontSize: '13px', 
+                            display: 'inline-block', 
+                            marginTop: '8px' 
+                          }}
+                        >
+                          <span className="fa fa-github mr-1"></span> {project.linkText}
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
       </div>
