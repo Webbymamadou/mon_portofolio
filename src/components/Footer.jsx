@@ -56,7 +56,7 @@ export default function Footer() {
               <h2 className="ftco-heading-2">Vous avez une question ?</h2>
               <div className="block-23 mb-3">
                 <ul>
-                  <li><span className="icon fa fa-map-marker"></span><span className="text">Sénégal, Dakar, Boop</span></li>
+                  <li><span className="icon fa fa-map-marker"></span><span className="text">Sénégal, Dakar, Zac Mbao</span></li>
                   <li>
                     <a href="tel:+221770778341">
                       <span className="icon fa fa-phone"></span><span className="text">+221 77 077 83 41</span>
