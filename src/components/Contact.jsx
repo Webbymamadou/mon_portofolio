@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import useIntersection from '../hooks/useIntersection';
 
+const WHATSAPP_NUMBER = '221770778341';
+
 const INITIAL_FORM = {
   name: '',
   email: '',
   subject: '',
   message: '',
 };
-
-const WHATSAPP_NUMBER = '221770778341';
 
 const CONTACTS = [
   {
@@ -46,17 +46,11 @@ const CONTACTS = [
 ];
 
 const RIGHT_COLUMN_VARIANTS = {
-  hidden: {
-    x: 30,
-    opacity: 0,
-  },
+  hidden: { x: 30, opacity: 0 },
   visible: {
     x: 0,
     opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: 'easeOut',
-    },
+    transition: { duration: 0.6, ease: 'easeOut' },
   },
 };
 
@@ -73,7 +67,6 @@ export default function Contact() {
     message: '',
   });
 
-  // Mise à jour des champs du formulaire.
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
@@ -82,16 +75,11 @@ export default function Contact() {
       [name]: value,
     }));
 
-    // Effacer les anciennes erreurs lorsque l'utilisateur corrige un champ.
-    if (status.type === 'danger' || status.type === 'warning') {
-      setStatus({
-        type: '',
-        message: '',
-      });
+    if (status.type === 'warning' || status.type === 'danger') {
+      setStatus({ type: '', message: '' });
     }
   };
 
-  // Validation du formulaire et préparation du message WhatsApp.
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
@@ -100,16 +88,14 @@ export default function Contact() {
     const subject = formData.subject.trim();
     const message = formData.message.trim();
 
-    // Vérifier que tous les champs sont remplis.
     if (!name || !email || !subject || !message) {
       setStatus({
         type: 'warning',
-        message: 'Veuillez remplir tous les champs du formulaire.',
+        message: 'Veuillez remplir tous les champs.',
       });
       return;
     }
 
-    // Vérifier le format de l'adresse e-mail.
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(email)) {
@@ -120,7 +106,6 @@ export default function Contact() {
       return;
     }
 
-    // Limiter la longueur des données.
     if (
       name.length > 100 ||
       email.length > 254 ||
@@ -129,13 +114,11 @@ export default function Contact() {
     ) {
       setStatus({
         type: 'warning',
-        message:
-          'Certains champs sont trop longs. Veuillez raccourcir votre saisie.',
+        message: 'Certains champs sont trop longs.',
       });
       return;
     }
 
-    // Construire le message qui sera envoyé par WhatsApp.
     const whatsappMessage = [
       'Bonjour Mamadou !',
       '',
@@ -149,24 +132,11 @@ export default function Contact() {
       message,
     ].join('\n');
 
-    // Créer le lien WhatsApp avec le message prérempli.
     const whatsappUrl =
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-        whatsappMessage
-      )}`;
+      `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(whatsappMessage)}`;
 
-    // Ouvrir WhatsApp dans un nouvel onglet.
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-
-    // Afficher une confirmation à l'utilisateur.
-    setStatus({
-      type: 'success',
-      message:
-        'WhatsApp va s’ouvrir avec votre message. Vérifiez-le, puis cliquez sur Envoyer pour me le transmettre.',
-    });
-
-    // Réinitialiser les champs.
-    setFormData({ ...INITIAL_FORM });
+    // Ouvrir WhatsApp directement dans l'onglet actuel.
+    window.location.assign(whatsappUrl);
   };
 
   return (
@@ -177,13 +147,11 @@ export default function Contact() {
     >
       <div className="container">
 
-        {/* Titre de la section */}
+        {/* Titre */}
         <div className="row justify-content-center mb-5 pb-3">
           <div className="col-md-7 heading-section text-center">
             <span className="subheading">Me contacter</span>
-
             <h2 className="mb-4">Contactez-moi</h2>
-
             <p>
               Je suis actuellement à la recherche d’une alternance en
               développement d'applications de gestion et informatique web
@@ -193,10 +161,9 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Formulaire et coordonnées */}
         <div className="row block-9">
 
-          {/* Colonne gauche : formulaire */}
+          {/* Formulaire */}
           <div className="col-md-8 mb-4">
             <form
               onSubmit={handleFormSubmit}
@@ -204,13 +171,11 @@ export default function Contact() {
             >
               <div className="row">
 
-                {/* Nom */}
                 <div className="col-md-6">
                   <div className="form-group">
                     <label htmlFor="contact-name" className="sr-only">
                       Votre nom
                     </label>
-
                     <input
                       id="contact-name"
                       type="text"
@@ -226,13 +191,11 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Adresse e-mail */}
                 <div className="col-md-6">
                   <div className="form-group">
                     <label htmlFor="contact-email" className="sr-only">
-                      Votre adresse e-mail
+                      Votre e-mail
                     </label>
-
                     <input
                       id="contact-email"
                       type="email"
@@ -248,13 +211,11 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Sujet */}
                 <div className="col-md-12">
                   <div className="form-group">
                     <label htmlFor="contact-subject" className="sr-only">
-                      Sujet du message
+                      Sujet
                     </label>
-
                     <input
                       id="contact-subject"
                       type="text"
@@ -269,13 +230,11 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Message */}
                 <div className="col-md-12">
                   <div className="form-group">
                     <label htmlFor="contact-message" className="sr-only">
                       Votre message
                     </label>
-
                     <textarea
                       id="contact-message"
                       name="message"
@@ -291,7 +250,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* Bouton d'envoi */}
                 <div className="col-md-12">
                   <div className="form-group">
                     <button
@@ -306,65 +264,31 @@ export default function Contact() {
                     </button>
                   </div>
 
-                  {/* Message de confirmation ou d'erreur */}
                   <AnimatePresence mode="wait">
                     {status.message && (
                       <motion.div
-                        key={`${status.type}-${status.message}`}
-                        initial={{
-                          opacity: 0,
-                          y: 10,
-                        }}
-                        animate={{
-                          opacity: 1,
-                          y: 0,
-                        }}
-                        exit={{
-                          opacity: 0,
-                          y: -10,
-                        }}
-                        role={
-                          status.type === 'danger' ||
-                          status.type === 'warning'
-                            ? 'alert'
-                            : 'status'
-                        }
-                        aria-live={
-                          status.type === 'danger' ||
-                          status.type === 'warning'
-                            ? 'assertive'
-                            : 'polite'
-                        }
+                        key={status.message}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        role="alert"
                         className={`mt-3 alert alert-${status.type}`}
                         style={{
                           fontSize: '15px',
                           borderRadius: '5px',
                         }}
                       >
-                        {status.type === 'success' && (
-                          <span
-                            className="fa fa-check mr-2"
-                            aria-hidden="true"
-                          />
-                        )}
-
-                        {status.type === 'warning' && (
-                          <span
-                            className="fa fa-exclamation-triangle mr-2"
-                            aria-hidden="true"
-                          />
-                        )}
-
                         {status.message}
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
+
               </div>
             </form>
           </div>
 
-          {/* Colonne droite : coordonnées */}
+          {/* Coordonnées */}
           <motion.div
             initial="hidden"
             animate={isVisible ? 'visible' : 'hidden'}
@@ -372,7 +296,6 @@ export default function Contact() {
             className="col-md-4 d-flex pl-md-5 mt-5 mt-md-0"
           >
             <div className="w-100">
-
               {CONTACTS.map((contact) => (
                 <div
                   className="dbox w-100 d-flex mb-3"
@@ -402,9 +325,7 @@ export default function Contact() {
                       {contact.href ? (
                         <a
                           href={contact.href}
-                          target={
-                            contact.external ? '_blank' : undefined
-                          }
+                          target={contact.external ? '_blank' : undefined}
                           rel={
                             contact.external
                               ? 'noopener noreferrer'
@@ -420,7 +341,6 @@ export default function Contact() {
                   </div>
                 </div>
               ))}
-
             </div>
           </motion.div>
 
