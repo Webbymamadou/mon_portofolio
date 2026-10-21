@@ -46,42 +46,60 @@ export default function About() {
                 <div className="col-md-12 heading-section">
                   <span className="subheading">Mon introduction</span>
                   <h2 className="mb-4" style={{ fontSize: '34px', textTransform: 'capitalize' }}>À propos de moi</h2>
-                   <p>Futur diplômé à l'ISI Dakar (L3 IAGE), j'associe l'ingénierie Backend Python à une réelle culture DevOps et entrepreneuriat. Spécialisé dans l'écosystème Python (Django, FastAPI, DRF), je maîtrise la conception de bases de données relationnelles (PostgreSQL, MySQL) ainsi que la conteneurisation et l'automatisation de déploiements (Docker, Linux, Nginx, CI/CD). Je recherche une alternance pour l'année 2026-2027 afin de contribuer activement à des projets ambitieux.</p>
-                  <ul className="about-info mt-4 px-md-0 px-2">
-                    <li className="d-flex"><span>Nom :</span> <span>Mamadou Seck</span></li>
-                    <li className="d-flex"><span>Adresse :</span> <span>Sénégal, Dakar, Zac Mbao</span></li>
-                    <li className="d-flex"><span>E-mail :</span> <span>mamadouseck1357@gmail.com</span></li>
-                    <li className="d-flex"><span>Téléphone :</span> <span>+221 77 077 83 41</span></li>
+                  <p style={{ fontFamily: '"Times New Roman", Times, serif' }}>Étudiant en Licence 3 d’Informatique Appliquée à la Gestion des Entreprises (IAGE) à l’ISI Dakar, je construis la partie invisible des applications : les API, les bases de données et le déploiement. Ma formation en gestion me donne un réflexe qui m’aide au quotidien : comprendre à quoi sert un système et qui l’utilisera avant d’écrire la première ligne de code.
+                    Je travaille avec l’écosystème Python (Django, FastAPI, Django REST Framework) et je conçois des bases de données relationnelles avec PostgreSQL et MySQL. Je conteneurise mes applications avec Docker et je les déploie sur des serveurs Linux avec Nginx, en m’appuyant sur l’automatisation (CI/CD).
+                    Depuis septembre 2026, je suis stagiaire développeur backend chez Formuloo, à distance, avec des développeurs seniors et une organisation Agile/Scrum sous Jira. Ce stage se termine fin décembre 2026.
+                    À partir de janvier 2027, je suis disponible pour une alternance ou un stage en développement backend Python. Je suis aussi ouvert aux missions de développement d’application et aux échanges avec les communautés tech : si vous avez un projet, écrivez-moi..</p>
+                  <ul className="about-info mt-4 px-md-0 px-2" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
+                    <li className="d-flex" style={{ marginBottom: '6px', lineHeight: '1.4' }}><span>Nom :</span> <span>Mamadou Seck</span></li>
+                    <li className="d-flex" style={{ marginBottom: '6px', lineHeight: '1.4' }}><span>Adresse :</span> <span>Sénégal, Dakar, Zac Mbao</span></li>
+                    <li className="d-flex" style={{ marginBottom: '6px', lineHeight: '1.4' }}><span>E-mail :</span> <span>mamadouseck1357@gmail.com</span></li>
+                    <li className="d-flex" style={{ marginBottom: '6px', lineHeight: '1.4' }}><span>Téléphone :</span> <span>+221 77 077 83 41</span></li>
                   </ul>
                 </div>
 
-                {/* Badges d'intérêts */}
+                {/* Compétences en cartes */}
                 <div className="col-md-12">
-                  <div className="my-interest d-lg-flex w-100">
-                    <div className="interest-wrap d-flex align-items-center">
-                      <div className="icon d-flex align-items-center justify-content-center">
-                        <span className="flaticon-web-programming"></span>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px', marginTop: '10px' }}>
+                    {[
+                      { icon: 'flaticon-web-programming', title: 'Python', items: 'Django, FastAPI, DRF, ORM' },
+                      { icon: 'flaticon-app-development', title: 'Bases de données', items: 'PostgreSQL, MySQL, SQL' },
+                      { icon: 'flaticon-vector', title: 'DevOps', items: 'Docker, Linux, Nginx, CI/CD' },
+                      { icon: 'flaticon-computer', title: 'Outils', items: 'Git, GitHub, Postman' },
+                    ].map((skill) => (
+                      <div
+                        key={skill.title}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          gap: '14px',
+                          padding: '18px 20px',
+                          border: '1px solid #e6e6e6',
+                          borderRadius: '10px',
+                          background: '#fff',
+                          boxShadow: '0 4px 14px rgba(0,0,0,0.04)',
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: '46px',
+                            height: '46px',
+                            flexShrink: 0,
+                            borderRadius: '50%',
+                            background: '#eef0e4',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                          }}
+                        >
+                          <span className={skill.icon} style={{ fontSize: '20px', color: '#a9ae8e' }}></span>
+                        </div>
+                        <div>
+                          <h4 style={{ fontSize: '17px', fontWeight: 600, margin: '0 0 6px' }}>{skill.title}</h4>
+                          <p style={{ margin: 0, fontSize: '15px', lineHeight: '1.5', color: '#666' }}>{skill.items}</p>
+                        </div>
                       </div>
-                      <div className="text">Python (Django, FastAPI, DRF, ORM)</div>
-                    </div>
-                    <div className="interest-wrap d-flex align-items-center">
-                      <div className="icon d-flex align-items-center justify-content-center">
-                        <span className="flaticon-app-development"></span>
-                      </div>
-                      <div className="text">Bases de données (PostgreSQL, MySQL, SQL)</div>
-                    </div>
-                    <div className="interest-wrap d-flex align-items-center">
-                      <div className="icon d-flex align-items-center justify-content-center">
-                        <span className="flaticon-vector"></span>
-                      </div>
-                      <div className="text">DevOps (Docker, Linux, Nginx, CI/CD)</div>
-                    </div>
-                    <div className="interest-wrap d-flex align-items-center">
-                      <div className="icon d-flex align-items-center justify-content-center">
-                        <span className="flaticon-computer"></span>
-                      </div>
-                      <div className="text">Outils (Git, GitHub, Postman)</div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
