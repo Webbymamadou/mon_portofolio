@@ -153,10 +153,7 @@ export default function Contact() {
             <span className="subheading">Me contacter</span>
             <h2 className="mb-4">Contactez-moi</h2>
             <p>
-              Je suis actuellement à la recherche d’une alternance en
-              développement d'applications de gestion et informatique web
-              pour l’année universitaire 2026-2027. N’hésitez pas à me
-              contacter.
+            Passionné par le développement d’applications de gestion et l’informatique web, je suis ouvert aux opportunités de collaboration et aux nouveaux projets. N’hésitez pas à me contacter.
             </p>
           </div>
         </div>
