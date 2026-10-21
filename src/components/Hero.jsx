@@ -86,10 +86,12 @@ export default function Hero() {
                 >
                   <span className="subheading">Bonjour, je suis Mamadou Seck</span>
                   <h1 className="mb-4 mt-3" style={{ fontSize: '40px', lineHeight: '1.2' }}>
-                    Backend Developer &amp; DevOps | <span>Python, Docker, Linux</span>
+                 Développeur Backend Python & DevOps |<span> Django, Docker, Linux</span>
                   </h1>
                   <p className="mb-4">
-                    Futur diplômé à l'ISI Dakar (L3 IAGE), j'associe l'ingénierie Backend Python à une réelle culture DevOps et entrepreneuriat. De la modélisation de bases de données à la conteneurisation Docker et l'automatisation CI/CD, j'apporte une double compétence : du code propre et une vision orientée résultat. Disponible pour une alternance en 2026-2027.
+                    Développeur backend Python, je conçois des API et des architectures propres, de la modélisation des bases de données jusqu’au déploiement. Étudiant en Licence 3 d’Informatique Appliquée à la Gestion des Entreprises (IAGE) à l’ISI Dakar, j’allie rigueur technique et culture DevOps.
+                    Stagiaire développeur backend chez Formuloo, je travaille à distance avec des développeurs seniors, en méthode Agile/Scrum avec Jira, et j’y renforce mes bases en Django REST Framework.
+                    Je cherche une alternance ou un stage en développement backend Python pour rejoindre une équipe ambitieuse.
                   </p>
                   <p>
                     <a href="#projects-section" onClick={(e) => handleScrollTo(e, 'projects-section')} className="btn btn-primary mr-2">
