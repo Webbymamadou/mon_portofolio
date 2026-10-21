@@ -75,7 +75,6 @@ const PROJECTS = [
     linkType: 'private',
     linkText: 'Projet client — dépôt privé',
   }
-
 ];
 
 export default function Projects() {
