@@ -4,42 +4,14 @@ import useIntersection from '../hooks/useIntersection';
 
 const PROJECTS = [
   {
-    title: 'SaaS WebBuilder PME',
-    subtitle: 'Générateur de sites web pour PME',
-    bg: '/images/work-1.jpg',
-    tech: 'Django, React, Celery, PostgreSQL, Docker',
-    features: 'Tâches asynchrones, génération automatique, automatisation du déploiement',
-    link: 'https://github.com/Webbymamadou/GIGRH_App',
-    linkType: 'github',
-    linkText: 'Code Source sur GitHub',
-  },
-  {
-    title: 'DevConnect',
-    subtitle: 'Plateforme collaborative pour développeurs',
-    bg: '/images/work-5.jpg',
-    tech: 'Django, FastAPI, PostgreSQL, Docker, Tailwind CSS',
-    features: 'APIs RESTful, authentification JWT, migration PostgreSQL, Docker Compose',
-    link: 'https://github.com/Webbymamadou/DevConnect',
-    linkType: 'github',
-    linkText: 'Code Source sur GitHub',
-  },
-  {
-    title: 'Portfolio Professionnel',
-    subtitle: 'Ce site même (Vitrine & Réalisations)',
-    bg: '/images/work-3.jpg',
-    tech: 'React 19, Framer Motion, Sass, GitHub Actions',
-    features: 'Jauges circulaires SVG animées, workflow CI/CD, responsive design',
-    link: 'https://github.com/Webbymamadou/mon_portofolio',
-    linkType: 'github',
-    linkText: 'Code Source sur GitHub',
-  },
-  {
     title: 'DistriManager',
-    subtitle: 'Application de gestion intégrée pour entreprise de distribution',
+    subtitle: 'Gestion intégrée pour une entreprise de distribution',
     bg: '/images/work-2.jpg',
-    tech: 'Django REST Framework, HTML5/CSS3 (Tailwind), JavaScript, PostgreSQL',
-    features: 'Gestion clients & stocks multi-entrepôts, prise de commande bureau + terrain, tableau de bord, gestion des rôles (RBAC)',
+    problem: 'Une entreprise de distribution suit ses stocks sur plusieurs entrepôts, et ses commerciaux prennent les commandes aussi bien au bureau que sur le terrain.',
+    tech: ['Django REST Framework', 'PostgreSQL', 'Tailwind CSS', 'JavaScript'],
+    features: 'Clients et stocks multi-entrepôts, prise de commande bureau + terrain, tableau de bord, gestion des rôles (RBAC)',
     link: null,
+    site: null,
     linkType: 'private',
     linkText: 'Projet client — dépôt privé',
   },
@@ -47,11 +19,49 @@ const PROJECTS = [
     title: 'KP — Librairie Papeterie',
     subtitle: 'Site vitrine multi-boutiques avec espace de gestion',
     bg: '/images/work-4.jpg',
-    tech: 'Django REST Framework, PostgreSQL, React (Vite), JWT',
-    features: 'Catalogue par boutique avec recherche/filtres, commande directe via WhatsApp, espace de gestion sécurisé par boutique',
+    problem: 'Chaque boutique présente son catalogue en ligne, et les clients commandent directement par WhatsApp.',
+    tech: ['Django REST Framework', 'PostgreSQL', 'React (Vite)', 'JWT'],
+    features: 'Catalogue par boutique avec recherche et filtres, commande via WhatsApp, espace de gestion sécurisé par boutique',
     link: null,
+    site: null,
     linkType: 'private',
     linkText: 'Projet client — dépôt privé',
+  },
+  {
+    title: 'SaaS WebBuilder PME',
+    subtitle: 'Générateur de sites web pour PME',
+    bg: '/images/work-1.jpg',
+    problem: 'Permettre à une petite entreprise d’obtenir son site web sans passer par un développeur.',
+    tech: ['Django', 'React', 'Celery', 'PostgreSQL', 'Docker'],
+    features: 'Tâches asynchrones, génération automatique, automatisation du déploiement',
+    link: 'https://github.com/Webbymamadou/GIGRH_App',
+    site: null,
+    linkType: 'github',
+    linkText: 'Code source sur GitHub',
+  },
+  {
+    title: 'DevConnect',
+    subtitle: 'Plateforme collaborative pour développeurs',
+    bg: '/images/work-5.jpg',
+    problem: 'Un espace où des développeurs se retrouvent pour collaborer et partager.',
+    tech: ['Django', 'FastAPI', 'PostgreSQL', 'Docker', 'Tailwind CSS'],
+    features: 'API RESTful, authentification JWT, migration PostgreSQL, Docker Compose',
+    link: 'https://github.com/Webbymamadou/DevConnect',
+    site: null,
+    linkType: 'github',
+    linkText: 'Code source sur GitHub',
+  },
+  {
+    title: 'Portfolio Professionnel',
+    subtitle: 'Ce site même',
+    bg: '/images/work-3.jpg',
+    problem: 'Présenter mon profil, mes compétences et mes projets de façon claire et rapide à parcourir.',
+    tech: ['React 19', 'Framer Motion', 'Sass', 'GitHub Actions'],
+    features: 'Jauges circulaires SVG animées, workflow CI/CD, design responsive',
+    link: 'https://github.com/Webbymamadou/mon_portofolio',
+    site: 'https://mon-portfolio-wheat.vercel.app',
+    linkType: 'github',
+    linkText: 'Code source sur GitHub',
   },
 ];
 
@@ -70,14 +80,14 @@ export default function Projects() {
         {/* Titre de section */}
         <div className="row justify-content-center pb-5">
           <div className="col-md-12 heading-section text-center">
-            <span className="subheading">Accomplissements</span>
+            <span className="subheading">Ce que j'ai construit</span>
             <h2 className="mb-4">Mes Projets</h2>
-            <p>Découvrez mes réalisations majeures en ingénierie backend, architectures d'API, intégration DevOps et développement d'applications collaboratives.</p>
+            <p>Des applications réelles, certaines utilisées par des entreprises, d'autres construites pour apprendre. Quand le code est public, il est à un clic.</p>
           </div>
         </div>
 
         {/* Grille de projets */}
-        <div className="row">
+        <div className="row justify-content-center">
           {PROJECTS.map((project, index) => {
             const isPrivate = project.linkType === 'private' || !project.link;
 
@@ -87,112 +97,120 @@ export default function Projects() {
                 variants={cardVariants}
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
-                className="col-md-4"
+                className="col-md-6 col-lg-4 mb-4 d-flex"
               >
-                <div 
-                  className="project img shadow d-flex justify-content-center align-items-center rounded mb-4" 
-                  style={{ 
-                    backgroundImage: `url(${project.bg})`, 
-                    height: '350px',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    position: 'relative'
-                  }}
+                <div
+                  className="bg-white rounded shadow"
+                  style={{ width: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
                 >
-                  {project.status === 'en-cours' && (
-                    <span 
-                      style={{ 
-                        position: 'absolute', 
-                        top: '15px', 
-                        right: '15px', 
-                        background: '#ffbd39', 
-                        color: '#000', 
-                        padding: '4px 10px', 
-                        borderRadius: '4px', 
-                        fontSize: '11px', 
-                        fontWeight: '700', 
-                        textTransform: 'uppercase',
-                        letterSpacing: '1px',
-                        zIndex: 2,
-                        boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
-                      }}
-                    >
-                      En cours
-                    </span>
-                  )}
+                  {/* Image du projet */}
+                  <div style={{ position: 'relative', height: '220px' }}>
+                    <img
+                      src={project.bg}
+                      alt={`Aperçu du projet ${project.title}`}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    />
 
-                  {isPrivate && (
-                    <span
-                      style={{
-                        position: 'absolute',
-                        top: '15px',
-                        left: '15px',
-                        background: 'rgba(255,255,255,0.15)',
-                        border: '1px solid rgba(255,255,255,0.4)',
-                        color: '#fff',
-                        padding: '4px 10px',
-                        borderRadius: '4px',
-                        fontSize: '11px',
-                        fontWeight: '700',
-                        textTransform: 'uppercase',
-                        letterSpacing: '1px',
-                        zIndex: 2,
-                        backdropFilter: 'blur(2px)'
-                      }}
-                    >
-                      Client — Prod
-                    </span>
-                  )}
+                    {project.status === 'en-cours' && (
+                      <span
+                        style={{
+                          position: 'absolute',
+                          top: '15px',
+                          right: '15px',
+                          background: '#ffbd39',
+                          color: '#000',
+                          padding: '4px 10px',
+                          borderRadius: '4px',
+                          fontSize: '11px',
+                          fontWeight: '700',
+                          textTransform: 'uppercase',
+                          letterSpacing: '1px',
+                          boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                        }}
+                      >
+                        En cours
+                      </span>
+                    )}
 
-                  <div className="overlay"></div>
-                  <div className="text text-center p-4">
-                    <h3>
-                      {isPrivate ? (
-                        project.title
-                      ) : (
-                        <a href={project.link} target="_blank" rel="noopener noreferrer">
-                          {project.title}
-                        </a>
-                      )}
-                    </h3>
-                    <span className="text-white opacity-80" style={{ display: 'block', marginBottom: '10px' }}>
+                    {isPrivate && (
+                      <span
+                        style={{
+                          position: 'absolute',
+                          top: '15px',
+                          left: '15px',
+                          background: 'rgba(0,0,0,0.55)',
+                          border: '1px solid rgba(255,255,255,0.4)',
+                          color: '#fff',
+                          padding: '4px 10px',
+                          borderRadius: '4px',
+                          fontSize: '11px',
+                          fontWeight: '700',
+                          textTransform: 'uppercase',
+                          letterSpacing: '1px'
+                        }}
+                      >
+                        Client — Prod
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Texte du projet */}
+                  <div style={{ padding: '22px 24px 24px', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                    <h3 style={{ fontSize: '21px', fontWeight: 600, margin: '0 0 4px' }}>{project.title}</h3>
+                    <span style={{ display: 'block', color: '#a9ae8e', fontWeight: 500, fontSize: '14px', marginBottom: '12px' }}>
                       {project.subtitle}
                     </span>
-                    
-                    <div className="mt-3 text-white" style={{ fontSize: '13px', lineHeight: '1.5' }}>
-                      <strong>Technologies :</strong> {project.tech}<br />
-                      {project.features && (
-                        <>
-                          <strong>Fonctionnalités :</strong> {project.features}<br />
-                        </>
+
+                    <p style={{ fontSize: '15px', lineHeight: '1.55', color: '#555', marginBottom: '12px' }}>
+                      {project.problem}
+                    </p>
+
+                    <p style={{ fontSize: '14px', lineHeight: '1.5', color: '#777', marginBottom: '14px' }}>
+                      <strong style={{ color: '#000' }}>Fonctionnalités :</strong> {project.features}
+                    </p>
+
+                    {/* Technologies en étiquettes */}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
+                      {project.tech.map((t) => (
+                        <span
+                          key={t}
+                          style={{
+                            padding: '4px 12px',
+                            fontSize: '13px',
+                            borderRadius: '999px',
+                            border: '1px solid #d9dcc7',
+                            background: '#f6f7ef',
+                            color: '#555'
+                          }}
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Liens, poussés en bas de la carte */}
+                    <div style={{ marginTop: 'auto', display: 'flex', flexWrap: 'wrap', gap: '8px 20px' }}>
+                      {project.site && (
+                        <a
+                          href={project.site}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: '#a9ae8e', fontWeight: 600, fontSize: '14px', textDecoration: 'none' }}
+                        >
+                          <span className="fa fa-external-link mr-1"></span> Voir le site
+                        </a>
                       )}
 
                       {isPrivate ? (
-                        <span
-                          style={{
-                            color: '#cbd5e1',
-                            fontWeight: '600',
-                            fontSize: '13px',
-                            display: 'inline-block',
-                            marginTop: '8px',
-                            fontStyle: 'italic'
-                          }}
-                        >
+                        <span style={{ color: '#999', fontWeight: 600, fontSize: '14px', fontStyle: 'italic' }}>
                           <span className="fa fa-lock mr-1"></span> {project.linkText}
                         </span>
                       ) : (
-                        <a 
-                          href={project.link} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          style={{ 
-                            color: '#a5b4fc', 
-                            textDecoration: 'none', 
-                            fontWeight: '600', 
-                            fontSize: '13px', 
-                            display: 'inline-block', 
-                            marginTop: '8px' 
-                          }}
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ color: '#a9ae8e', fontWeight: 600, fontSize: '14px', textDecoration: 'none' }}
                         >
                           <span className="fa fa-github mr-1"></span> {project.linkText}
                         </a>
