@@ -58,45 +58,36 @@ export default function About() {
                   </ul>
                 </div>
 
-                {/* Compétences en cartes */}
-                <div className="col-md-12">
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '16px', marginTop: '10px' }}>
+                {/* Compétences en étiquettes */}
+                <div className="col-md-12" style={{ marginTop: '45px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '28px 32px' }}>
                     {[
-                      { icon: 'flaticon-web-programming', title: 'Python', items: 'Django, FastAPI, DRF, ORM' },
-                      { icon: 'flaticon-app-development', title: 'Bases de données', items: 'PostgreSQL, MySQL, SQL' },
-                      { icon: 'flaticon-vector', title: 'DevOps', items: 'Docker, Linux, Nginx, CI/CD' },
-                      { icon: 'flaticon-computer', title: 'Outils', items: 'Git, GitHub, Postman' },
-                    ].map((skill) => (
-                      <div
-                        key={skill.title}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'flex-start',
-                          gap: '14px',
-                          padding: '18px 20px',
-                          border: '1px solid #e6e6e6',
-                          borderRadius: '10px',
-                          background: '#fff',
-                          boxShadow: '0 4px 14px rgba(0,0,0,0.04)',
-                        }}
-                      >
-                        <div
-                          style={{
-                            width: '46px',
-                            height: '46px',
-                            flexShrink: 0,
-                            borderRadius: '50%',
-                            background: '#eef0e4',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                          }}
-                        >
-                          <span className={skill.icon} style={{ fontSize: '20px', color: '#a9ae8e' }}></span>
+                      { title: 'Python', items: ['Django', 'FastAPI', 'DRF', 'ORM'] },
+                      { title: 'Bases de données', items: ['PostgreSQL', 'MySQL', 'SQL'] },
+                      { title: 'DevOps', items: ['Docker', 'Linux', 'Nginx', 'CI/CD'] },
+                      { title: 'Outils', items: ['Git', 'GitHub', 'Postman'] },
+                    ].map((group) => (
+                      <div key={group.title}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                          <span style={{ width: '4px', height: '20px', background: '#a9ae8e', borderRadius: '2px' }}></span>
+                          <h4 style={{ margin: 0, fontSize: '17px', fontWeight: 600 }}>{group.title}</h4>
                         </div>
-                        <div>
-                          <h4 style={{ fontSize: '17px', fontWeight: 600, margin: '0 0 6px' }}>{skill.title}</h4>
-                          <p style={{ margin: 0, fontSize: '15px', lineHeight: '1.5', color: '#666' }}>{skill.items}</p>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                          {group.items.map((item) => (
+                            <span
+                              key={item}
+                              style={{
+                                padding: '6px 14px',
+                                fontSize: '14px',
+                                borderRadius: '999px',
+                                border: '1px solid #d9dcc7',
+                                background: '#f6f7ef',
+                                color: '#555',
+                              }}
+                            >
+                              {item}
+                            </span>
+                          ))}
                         </div>
                       </div>
                     ))}
