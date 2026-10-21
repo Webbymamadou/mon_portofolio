@@ -2169,11 +2169,13 @@ textarea.form-control {
 
 
 
+
+
+
 /* ==========================================================
    HERO MOBILE — VERSION CORRIGÉE
+   Image large, texte lisible et boutons bien alignés.
    Mobile uniquement : 767px maximum.
-   Compatible avec les classes réelles de Hero.jsx.
-   Desktop et tablettes : inchangés.
    ========================================================== */
 
 @media screen and (max-width: 767px) {
@@ -2182,7 +2184,7 @@ textarea.form-control {
   #accueil-section.hero {
     height: auto !important;
     min-height: 0 !important;
-    padding: 25px 0 35px !important;
+    padding: 20px 0 35px !important;
     overflow: hidden !important;
   }
 
@@ -2207,8 +2209,8 @@ textarea.form-control {
   /* CONTENEUR BOOTSTRAP */
   #accueil-section .container-fluid {
     height: auto !important;
-    padding-left: 18px !important;
-    padding-right: 18px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
 
   /* LIGNE : IMAGE PUIS TEXTE */
@@ -2222,48 +2224,58 @@ textarea.form-control {
   }
 
   /* ========================================================
-     IMAGE
+     IMAGE — PRESQUE TOUTE LA LARGEUR DU TÉLÉPHONE
      ======================================================== */
 
   #accueil-section .slider-text > .one-third {
     order: 1;
+
     position: relative !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
+
+    /* Image large avec de petites marges */
     width: 100% !important;
-    max-width: 300px !important;
-    height: 250px !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+
+    /* Hauteur proportionnelle à la largeur du téléphone */
+    height: clamp(280px, 85vw, 420px) !important;
     min-height: 0 !important;
-    margin: 0 auto 25px !important;
+
+    margin: 0 auto 24px !important;
     padding: 0 !important;
+
     overflow: hidden !important;
     flex: 0 0 auto !important;
     z-index: 1 !important;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+
+    border-radius: 12px !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12) !important;
   }
 
-  /* Image animée */
+  /* IMAGE ANIMÉE EN ARRIÈRE-PLAN */
   #accueil-section .slider-text > .one-third > div {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
+
     width: 100% !important;
     height: 100% !important;
+
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center top !important;
   }
 
-  /* Supprimer les overlays décoratifs sur l'image */
+  /* SUPPRESSION DES OVERLAYS DÉCORATIFS */
   #accueil-section .slider-text > .one-third .overlay,
   #accueil-section .slider-text > .one-third .overlay-1 {
     display: none !important;
   }
 
-  /* Supprimer l'overlay général du slider sur mobile */
   #accueil-section .slider-item > .overlay {
     display: none !important;
   }
@@ -2274,17 +2286,21 @@ textarea.form-control {
 
   #accueil-section .slider-text > .one-forth {
     order: 2;
+
     position: relative !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
+
     width: 100% !important;
     max-width: 540px !important;
     height: auto !important;
     min-height: 0 !important;
+
     margin: 0 auto !important;
     padding: 0 !important;
+
     display: block !important;
     transform: none !important;
     z-index: 2 !important;
@@ -2296,16 +2312,19 @@ textarea.form-control {
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
+
     transform: none !important;
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
+
     margin: 0 !important;
     padding: 0 !important;
+
     text-align: center !important;
   }
 
-  /* Petit texte d'introduction */
+  /* TEXTE D'INTRODUCTION */
   #accueil-section .one-forth .subheading {
     display: block !important;
     margin: 0 0 10px !important;
@@ -2329,7 +2348,7 @@ textarea.form-control {
     color: #8f9272 !important;
   }
 
-  /* DESCRIPTIONS */
+  /* DESCRIPTION */
   #accueil-section .one-forth .text p.mb-4 {
     color: #444 !important;
     font-family: Arial, Helvetica, sans-serif !important;
@@ -2351,6 +2370,7 @@ textarea.form-control {
     align-items: center !important;
     justify-content: center !important;
     gap: 12px !important;
+
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -2361,12 +2381,15 @@ textarea.form-control {
     width: 100% !important;
     max-width: 320px !important;
     min-height: 46px !important;
+
     margin: 0 !important;
     padding: 12px 14px !important;
+
     font-size: 14px !important;
     line-height: 1.5 !important;
     white-space: normal !important;
     text-align: center !important;
+
     border-radius: 8px !important;
   }
 
@@ -2380,8 +2403,10 @@ textarea.form-control {
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
+
     width: 100% !important;
     margin: 18px auto 0 !important;
+
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -2396,8 +2421,9 @@ textarea.form-control {
 @media screen and (max-width: 380px) {
 
   #accueil-section .slider-text > .one-third {
-    max-width: 270px !important;
-    height: 225px !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 280px !important;
   }
 
   #accueil-section .one-forth .text h1 {
@@ -2405,7 +2431,7 @@ textarea.form-control {
   }
 
   #accueil-section .container-fluid {
-    padding-left: 14px !important;
-    padding-right: 14px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
 }
