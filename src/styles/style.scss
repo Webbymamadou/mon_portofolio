@@ -2167,80 +2167,89 @@ textarea.form-control {
 }
 
 
+
+
 /* ==========================================================
-   HERO MOBILE — UNIQUEMENT POUR LES ÉCRANS DE MOINS DE 768 PX
-   Desktop et tablettes : styles existants conservés.
+   HERO MOBILE — VERSION CORRIGÉE
+   Mobile uniquement : 767px maximum.
+   Compatible avec les classes réelles de Hero.jsx.
+   Desktop et tablettes : inchangés.
    ========================================================== */
 
 @media screen and (max-width: 767px) {
 
-  /* 1. Section Hero : hauteur automatique et espace sous le menu */
+  /* SECTION PRINCIPALE */
   #accueil-section.hero {
     height: auto !important;
     min-height: 0 !important;
-    padding: 35px 0 45px !important;
+    padding: 25px 0 35px !important;
     overflow: hidden !important;
   }
 
-  /* 2. Conteneur principal du slider */
+  /* SLIDER */
   #accueil-section .home-slider {
     height: auto !important;
     min-height: 0 !important;
-    overflow: visible !important;
+    overflow: hidden !important;
   }
 
-  /* 3. Le slider ne doit plus occuper 750px sur mobile */
   #accueil-section .home-slider > .slider-item {
     position: relative !important;
-    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
     width: 100% !important;
     height: auto !important;
     min-height: 0 !important;
-    overflow: visible !important;
   }
 
-  /* 4. Conteneur Bootstrap */
-  #accueil-section .hero-container {
+  /* CONTENEUR BOOTSTRAP */
+  #accueil-section .container-fluid {
     height: auto !important;
     padding-left: 18px !important;
     padding-right: 18px !important;
   }
 
-  /* 5. Image puis texte : disposition verticale */
-  #accueil-section .hero-row {
-    height: auto !important;
+  /* LIGNE : IMAGE PUIS TEXTE */
+  #accueil-section .row.slider-text {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: flex-start !important;
+    height: auto !important;
     margin: 0 !important;
   }
 
-  /*
-   * 6. IMAGE
-   * On conserve le background-image et son animation React.
-   */
-  #accueil-section .hero-row > .one-third {
+  /* ========================================================
+     IMAGE
+     ======================================================== */
+
+  #accueil-section .slider-text > .one-third {
     order: 1;
     position: relative !important;
-    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
     width: 100% !important;
-    max-width: 300px;
-    height: 270px !important;
+    max-width: 300px !important;
+    height: 250px !important;
     min-height: 0 !important;
-    margin: 0 auto 28px !important;
+    margin: 0 auto 25px !important;
     padding: 0 !important;
     overflow: hidden !important;
-    border-radius: 16px;
-    z-index: 1 !important;
     flex: 0 0 auto !important;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+    z-index: 1 !important;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
   }
 
-  /* L'image animée remplit son cadre */
-  #accueil-section .hero-row > .one-third > div {
+  /* Image animée */
+  #accueil-section .slider-text > .one-third > div {
     position: absolute !important;
-    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
     width: 100% !important;
     height: 100% !important;
     background-size: cover !important;
@@ -2248,139 +2257,155 @@ textarea.form-control {
     background-position: center top !important;
   }
 
-  /* Supprimer les overlays décoratifs de l'image sur mobile */
-  #accueil-section .hero-row > .one-third .overlay,
-  #accueil-section .hero-row > .one-third .overlay-1 {
+  /* Supprimer les overlays décoratifs sur l'image */
+  #accueil-section .slider-text > .one-third .overlay,
+  #accueil-section .slider-text > .one-third .overlay-1 {
     display: none !important;
   }
 
-  /*
-   * 7. TEXTE
-   * On annule le positionnement absolute défini dans le CSS actuel.
-   */
-  #accueil-section .hero-row > .one-forth {
+  /* Supprimer l'overlay général du slider sur mobile */
+  #accueil-section .slider-item > .overlay {
+    display: none !important;
+  }
+
+  /* ========================================================
+     TEXTE
+     ======================================================== */
+
+  #accueil-section .slider-text > .one-forth {
     order: 2;
     position: relative !important;
-    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    max-width: 540px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: block !important;
+    transform: none !important;
+    z-index: 2 !important;
+  }
+
+  #accueil-section .one-forth .text {
+    position: relative !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
     transform: none !important;
     width: 100% !important;
-    max-width: 540px;
-    height: auto !important;
-    min-height: 0 !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    display: block !important;
-    z-index: 2 !important;
-  }
-
-  /* Bloc de texte */
-  #accueil-section .hero-row > .one-forth .text {
-    position: relative !important;
-    inset: auto !important;
-    transform: none !important;
-    width: 100% !important;
     max-width: 100% !important;
+    height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
     text-align: center !important;
   }
 
-  /* 8. Petit texte d'introduction */
-  #accueil-section .hero-row .subheading {
-    display: block;
-    margin: 0 0 12px !important;
+  /* Petit texte d'introduction */
+  #accueil-section .one-forth .subheading {
+    display: block !important;
+    margin: 0 0 10px !important;
     font-size: 12px !important;
-    line-height: 1.7 !important;
+    line-height: 1.6 !important;
     letter-spacing: 1.5px !important;
     overflow-wrap: anywhere;
   }
 
-  /* 9. Titre principal */
-  #accueil-section .hero-row .text h1 {
+  /* TITRE PRINCIPAL */
+  #accueil-section .one-forth .text h1 {
     color: #232931 !important;
-    font-size: clamp(25px, 7vw, 32px) !important;
+    font-size: clamp(25px, 7vw, 30px) !important;
     line-height: 1.3 !important;
     font-weight: 800 !important;
-    margin: 0 0 20px !important;
+    margin: 0 0 18px !important;
     overflow-wrap: anywhere;
   }
 
-  #accueil-section .hero-row .text h1 span {
-    color: #b1b493 !important;
+  #accueil-section .one-forth .text h1 span {
+    color: #8f9272 !important;
   }
 
-  /* 10. Description */
-  #accueil-section .hero-row .text p.mb-4 {
+  /* DESCRIPTION */
+  #accueil-section .one-forth .text p.mb-4 {
     color: #444 !important;
     font-family: Arial, Helvetica, sans-serif !important;
     font-size: 15px !important;
     font-weight: 400 !important;
-    line-height: 1.8 !important;
+    line-height: 1.7 !important;
     text-align: left !important;
-    margin: 0 0 25px !important;
+    margin: 0 0 24px !important;
     overflow-wrap: break-word;
   }
 
-  /* 11. Boutons : empilés avec un espace régulier */
-  #accueil-section .hero-row .text p:last-child {
+  /* ========================================================
+     BOUTONS
+     ======================================================== */
+
+  #accueil-section .one-forth .text p:last-child {
     display: flex !important;
     flex-direction: column !important;
-    align-items: stretch !important;
+    align-items: center !important;
     justify-content: center !important;
     gap: 12px !important;
+    width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
-  #accueil-section .hero-row .text p:last-child .btn {
+  #accueil-section .one-forth .text p:last-child .btn {
     display: block !important;
     width: 100% !important;
-    max-width: 320px;
-    min-height: 48px;
-    margin: 0 auto !important;
-    padding: 12px 16px !important;
+    max-width: 320px !important;
+    min-height: 46px !important;
+    margin: 0 !important;
+    padding: 12px 14px !important;
     font-size: 14px !important;
     line-height: 1.5 !important;
-    text-align: center !important;
     white-space: normal !important;
+    text-align: center !important;
     border-radius: 8px !important;
   }
 
-  /* 12. Indicateurs du slider : sous le contenu */
+  /* ========================================================
+     INDICATEURS DU SLIDER
+     ======================================================== */
+
   #accueil-section .home-slider > .owl-dots {
     position: relative !important;
-    inset: auto !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
     width: 100% !important;
-    margin: 20px auto 0 !important;
+    margin: 18px auto 0 !important;
     display: flex !important;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-
-  #accueil-section .home-slider > .owl-dots .owl-dot {
-    flex: 0 0 10px;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
   }
 }
 
-/* Très petits smartphones */
+/* ==========================================================
+   TRÈS PETITS TÉLÉPHONES
+   ========================================================== */
+
 @media screen and (max-width: 380px) {
-  #accueil-section .hero-row > .one-third {
-    max-width: 270px;
-    height: 245px !important;
+
+  #accueil-section .slider-text > .one-third {
+    max-width: 270px !important;
+    height: 225px !important;
   }
 
-  #accueil-section .hero-row .text h1 {
-    font-size: 25px !important;
+  #accueil-section .one-forth .text h1 {
+    font-size: 24px !important;
   }
 
-  #accueil-section .hero-container {
+  #accueil-section .container-fluid {
     padding-left: 14px !important;
     padding-right: 14px !important;
   }
 }
-
