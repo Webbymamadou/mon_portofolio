@@ -68,7 +68,7 @@ export default function Services() {
             >
               <div 
                 className="media block-6 services d-block bg-white rounded-lg shadow" 
-                style={{ height: '100%' }}
+                style={{ paddingBottom: '20px' }}
               >
                 <div 
                   className="icon d-flex align-items-center justify-content-center" 
@@ -76,11 +76,12 @@ export default function Services() {
                 >
                   <span className={service.icon}></span>
                 </div>
-                <div className="media-body">
+                <div className="media-body" style={{ paddingBottom: 0 }}>
                   <h3 className="heading mb-3">{service.title}</h3>
-                  <p>{service.desc}</p>
+                  <p className="mb-0">{service.desc}</p>
                 </div>
               </div>
+
             </motion.div>
           ))}
         </motion.div>
