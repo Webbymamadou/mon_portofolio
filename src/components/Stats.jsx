@@ -25,7 +25,7 @@ export default function Stats() {
   const stats = [
     { icon: 'flaticon-suitcase', target: 100, suffix: '%', text: 'Code propre et relu', duration: 1500 },
     { icon: 'flaticon-computer', target: 100, suffix: '%', text: 'Esprit d’équipe', duration: 1500 },
-    { icon: 'flaticon-web-programming', target: 24/7, suffix: '%', text: 'Passion pour le backend', duration: 1500 },
+    { icon: 'flaticon-web-programming', target: 24/7, text: 'Passion pour le backend', duration: 1500 },
     { icon: 'flaticon-calendar', target: 2026, suffix: '', text: '1 objectif Rejoindre une équipe et y grandir', duration: 2500 },
   ];
 
