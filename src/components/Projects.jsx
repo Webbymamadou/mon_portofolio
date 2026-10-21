@@ -64,17 +64,18 @@ const PROJECTS = [
     linkText: 'Code source sur GitHub',
   },
   {
-    title: 'Portfolio Professionnel',
-    subtitle: 'Ce site même',
-    bg: '/images/work-3.jpg',
-    problem: 'Présenter mon profil, mes compétences et mes projets de façon claire et rapide à parcourir.',
-    tech: ['React 19', 'Framer Motion', 'Sass', 'GitHub Actions'],
-    features: 'Jauges circulaires SVG animées, workflow CI/CD, design responsive',
-    link: 'https://github.com/Webbymamadou/mon_portofolio',
+    title: 'Oustaz Agro Business',
+    subtitle: 'Plateforme de gestion avicole intégrée',
+    bg: '/images/work-6.jpg',
+    problem: 'Digitaliser et centraliser la gestion d’un élevage avicole : suivi des poulets, récolte des œufs, gestion des stocks, commandes, livraisons et finances.',
+    tech: ['React 19', 'TypeScript', 'Django REST Framework', 'PostgreSQL 16', 'Docker', 'Nginx'],
+    features: 'Application PWA installable, gestion multi-rôles avec JWT, suivi des bandes et de la mortalité, gestion des stocks, commandes et livraisons, suivi de trésorerie, architecture conteneurisée.',
+    link: null,
     site: null,
-    linkType: 'github',
-    linkText: 'Code source sur GitHub',
-  },
+    linkType: 'private',
+    linkText: 'Projet client — dépôt privé',
+  }
+
 ];
 
 export default function Projects() {
