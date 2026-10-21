@@ -59,40 +59,35 @@ export default function About() {
                 </div>
 
                 {/* Compétences en étiquettes */}
+                                {/* Compétences : une ligne par catégorie */}
                 <div className="col-md-12" style={{ marginTop: '45px' }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '28px 32px' }}>
-                    {[
-                      { title: 'Python', items: ['Django', 'FastAPI', 'DRF', 'ORM'] },
-                      { title: 'Bases de données', items: ['PostgreSQL', 'MySQL', 'SQL'] },
-                      { title: 'DevOps', items: ['Docker', 'Linux', 'Nginx', 'CI/CD'] },
-                      { title: 'Outils', items: ['Git', 'GitHub', 'Postman'] },
-                    ].map((group) => (
-                      <div key={group.title}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                          <span style={{ width: '4px', height: '20px', background: '#a9ae8e', borderRadius: '2px' }}></span>
-                          <h4 style={{ margin: 0, fontSize: '17px', fontWeight: 600 }}>{group.title}</h4>
-                        </div>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                          {group.items.map((item) => (
-                            <span
-                              key={item}
-                              style={{
-                                padding: '6px 14px',
-                                fontSize: '14px',
-                                borderRadius: '999px',
-                                border: '1px solid #d9dcc7',
-                                background: '#f6f7ef',
-                                color: '#555',
-                              }}
-                            >
-                              {item}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  {[
+                    { title: 'Python', items: 'Django, FastAPI, DRF, ORM' },
+                    { title: 'Bases de données', items: 'PostgreSQL, MySQL, SQL' },
+                    { title: 'DevOps', items: 'Docker, Linux, Nginx, CI/CD' },
+                    { title: 'Outils', items: 'Git, GitHub, Postman' },
+                  ].map((skill) => (
+                    <div
+                      key={skill.title}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '24px',
+                        padding: '12px 0',
+                        borderBottom: '1px solid #ececec',
+                        whiteSpace: 'nowrap',
+                      }}
+                    >
+                      <span style={{ minWidth: '170px', fontSize: '17px', fontWeight: 600, color: '#000' }}>
+                        {skill.title}
+                      </span>
+                      <span style={{ fontSize: '16px', color: '#a9ae8e', fontWeight: 500 }}>
+                        {skill.items}
+                      </span>
+                    </div>
+                  ))}
                 </div>
+
               </div>
             </div>
           </motion.div>
