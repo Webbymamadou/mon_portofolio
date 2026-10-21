@@ -63,6 +63,18 @@ const PROJECTS = [
     linkType: 'github',
     linkText: 'Code source sur GitHub',
   },
+  {
+    title: 'Portfolio Professionnel',
+    subtitle: 'Ce site même',
+    bg: '/images/work-3.jpg',
+    problem: 'Présenter mon profil, mes compétences et mes projets de façon claire et rapide à parcourir.',
+    tech: ['React 19', 'Framer Motion', 'Sass', 'GitHub Actions'],
+    features: 'Jauges circulaires SVG animées, workflow CI/CD, design responsive',
+    link: 'https://github.com/Webbymamadou/mon_portofolio',
+    site: null,
+    linkType: 'github',
+    linkText: 'Code source sur GitHub',
+  },
 ];
 
 export default function Projects() {
