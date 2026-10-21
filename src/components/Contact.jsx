@@ -1,8 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import useIntersection from '../hooks/useIntersection';
-
-const ACCESS_KEY = '46d90558-6651-4d22-a373-40e41fde4b64';
 
 const INITIAL_FORM = {
   name: '',
@@ -10,6 +8,8 @@ const INITIAL_FORM = {
   subject: '',
   message: '',
 };
+
+const WHATSAPP_NUMBER = '221770778341';
 
 const CONTACTS = [
   {
@@ -46,7 +46,10 @@ const CONTACTS = [
 ];
 
 const RIGHT_COLUMN_VARIANTS = {
-  hidden: { x: 30, opacity: 0 },
+  hidden: {
+    x: 30,
+    opacity: 0,
+  },
   visible: {
     x: 0,
     opacity: 1,
@@ -66,14 +69,11 @@ export default function Contact() {
   const [formData, setFormData] = useState(INITIAL_FORM);
 
   const [status, setStatus] = useState({
-    submitting: false,
     type: '',
     message: '',
   });
 
-  // Empêche les doubles soumissions, même avant le prochain rendu React.
-  const submittingRef = useRef(false);
-
+  // Mise à jour des champs du formulaire.
   const handleInputChange = (e) => {
     const { name, value } = e.target;
 
@@ -82,130 +82,91 @@ export default function Contact() {
       [name]: value,
     }));
 
-    // Efface le message d'erreur lorsque l'utilisateur corrige le formulaire.
+    // Effacer les anciennes erreurs lorsque l'utilisateur corrige un champ.
     if (status.type === 'danger' || status.type === 'warning') {
       setStatus({
-        submitting: false,
         type: '',
         message: '',
       });
     }
   };
 
-  const handleFormSubmit = async (e) => {
+  // Validation du formulaire et préparation du message WhatsApp.
+  const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    if (submittingRef.current) {
-      return;
-    }
+    const name = formData.name.trim();
+    const email = formData.email.trim();
+    const subject = formData.subject.trim();
+    const message = formData.message.trim();
 
-    // Vérification des champs.
-    const cleanedData = {
-      name: formData.name.trim(),
-      email: formData.email.trim(),
-      subject: formData.subject.trim(),
-      message: formData.message.trim(),
-    };
-
-    if (
-      !cleanedData.name ||
-      !cleanedData.email ||
-      !cleanedData.subject ||
-      !cleanedData.message
-    ) {
+    // Vérifier que tous les champs sont remplis.
+    if (!name || !email || !subject || !message) {
       setStatus({
-        submitting: false,
         type: 'warning',
         message: 'Veuillez remplir tous les champs du formulaire.',
       });
-
       return;
     }
 
-    // Vérification élémentaire du format de l'adresse e-mail.
+    // Vérifier le format de l'adresse e-mail.
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailRegex.test(cleanedData.email)) {
+    if (!emailRegex.test(email)) {
       setStatus({
-        submitting: false,
         type: 'warning',
         message: 'Veuillez saisir une adresse e-mail valide.',
       });
-
       return;
     }
 
-    // Limitation de la taille des champs.
+    // Limiter la longueur des données.
     if (
-      cleanedData.name.length > 100 ||
-      cleanedData.subject.length > 150 ||
-      cleanedData.message.length > 5000
+      name.length > 100 ||
+      email.length > 254 ||
+      subject.length > 150 ||
+      message.length > 5000
     ) {
       setStatus({
-        submitting: false,
         type: 'warning',
         message:
-          'Certains champs sont trop longs. Vérifiez les limites indiquées.',
+          'Certains champs sont trop longs. Veuillez raccourcir votre saisie.',
       });
-
       return;
     }
 
-    submittingRef.current = true;
+    // Construire le message qui sera envoyé par WhatsApp.
+    const whatsappMessage = [
+      'Bonjour Mamadou !',
+      '',
+      'Je vous contacte depuis votre portfolio.',
+      '',
+      `Nom : ${name}`,
+      `E-mail : ${email}`,
+      `Sujet : ${subject}`,
+      '',
+      'Message :',
+      message,
+    ].join('\n');
 
+    // Créer le lien WhatsApp avec le message prérempli.
+    const whatsappUrl =
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+        whatsappMessage
+      )}`;
+
+    // Ouvrir WhatsApp dans un nouvel onglet.
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+    // Afficher une confirmation à l'utilisateur.
     setStatus({
-      submitting: true,
-      type: 'info',
-      message: 'Envoi de votre message en cours...',
+      type: 'success',
+      message:
+        'WhatsApp va s’ouvrir avec votre message. Vérifiez-le, puis cliquez sur Envoyer pour me le transmettre.',
     });
 
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: ACCESS_KEY,
-          ...cleanedData,
-        }),
-      });
-
-      // Vérification de la réponse du service.
-      const result = await response.json();
-
-      if (!response.ok || result.success !== true) {
-        throw new Error(
-          result.message ||
-            "Le service n'a pas pu accepter votre message."
-        );
-      }
-
-      // Confirmation uniquement si le service indique un succès.
-      setFormData({ ...INITIAL_FORM });
-
-      setStatus({
-        submitting: false,
-        type: 'success',
-        message:
-          'Votre message a bien été envoyé. Merci de m’avoir contacté !',
-      });
-    } catch (error) {
-      console.error('Erreur lors de l’envoi du formulaire :', error);
-
-      setStatus({
-        submitting: false,
-        type: 'danger',
-        message:
-          error instanceof TypeError
-            ? 'Impossible de joindre le service d’envoi. Vérifiez votre connexion et réessayez.'
-            : error.message ||
-              "Une erreur est survenue. Veuillez réessayer.",
-      });
-    } finally {
-      submittingRef.current = false;
-    }
+    // Réinitialiser les champs.
+    setFormData({ ...INITIAL_FORM });
   };
 
   return (
@@ -235,21 +196,12 @@ export default function Contact() {
         {/* Formulaire et coordonnées */}
         <div className="row block-9">
 
-          {/* Colonne gauche : Formulaire */}
+          {/* Colonne gauche : formulaire */}
           <div className="col-md-8 mb-4">
             <form
               onSubmit={handleFormSubmit}
               className="bg-light p-4 p-md-5 contact-form"
-              aria-busy={status.submitting}
             >
-              {/* Clé publique du service Web3Forms */}
-              <input
-                type="hidden"
-                name="access_key"
-                value={ACCESS_KEY}
-                readOnly
-              />
-
               <div className="row">
 
                 {/* Nom */}
@@ -274,7 +226,7 @@ export default function Contact() {
                   </div>
                 </div>
 
-                {/* E-mail */}
+                {/* Adresse e-mail */}
                 <div className="col-md-6">
                   <div className="form-group">
                     <label htmlFor="contact-email" className="sr-only">
@@ -332,42 +284,45 @@ export default function Contact() {
                       cols="30"
                       rows="7"
                       className="form-control"
-                      placeholder="Message"
+                      placeholder="Votre message"
                       maxLength={5000}
                       required
                     />
                   </div>
                 </div>
 
-                {/* Bouton et notification */}
+                {/* Bouton d'envoi */}
                 <div className="col-md-12">
                   <div className="form-group">
                     <button
                       type="submit"
-                      disabled={status.submitting}
                       className="btn btn-primary py-3 px-5"
                     >
-                      {status.submitting ? (
-                        <>
-                          <span
-                            className="fa fa-spinner fa-spin mr-2"
-                            aria-hidden="true"
-                          />
-                          Envoi en cours...
-                        </>
-                      ) : (
-                        'Envoyer le message'
-                      )}
+                      <span
+                        className="fa fa-whatsapp mr-2"
+                        aria-hidden="true"
+                      />
+                      Envoyer via WhatsApp
                     </button>
                   </div>
 
+                  {/* Message de confirmation ou d'erreur */}
                   <AnimatePresence mode="wait">
                     {status.message && (
                       <motion.div
                         key={`${status.type}-${status.message}`}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
+                        initial={{
+                          opacity: 0,
+                          y: 10,
+                        }}
+                        animate={{
+                          opacity: 1,
+                          y: 0,
+                        }}
+                        exit={{
+                          opacity: 0,
+                          y: -10,
+                        }}
                         role={
                           status.type === 'danger' ||
                           status.type === 'warning'
@@ -393,17 +348,9 @@ export default function Contact() {
                           />
                         )}
 
-                        {(status.type === 'danger' ||
-                          status.type === 'warning') && (
+                        {status.type === 'warning' && (
                           <span
                             className="fa fa-exclamation-triangle mr-2"
-                            aria-hidden="true"
-                          />
-                        )}
-
-                        {status.type === 'info' && (
-                          <span
-                            className="fa fa-spinner fa-spin mr-2"
                             aria-hidden="true"
                           />
                         )}
@@ -417,7 +364,7 @@ export default function Contact() {
             </form>
           </div>
 
-          {/* Colonne droite : Coordonnées */}
+          {/* Colonne droite : coordonnées */}
           <motion.div
             initial="hidden"
             animate={isVisible ? 'visible' : 'hidden'}
@@ -455,7 +402,9 @@ export default function Contact() {
                       {contact.href ? (
                         <a
                           href={contact.href}
-                          target={contact.external ? '_blank' : undefined}
+                          target={
+                            contact.external ? '_blank' : undefined
+                          }
                           rel={
                             contact.external
                               ? 'noopener noreferrer'
