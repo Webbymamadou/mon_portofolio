@@ -22,10 +22,12 @@ export default function HireMe() {
               <p>Je cherche une alternance ou un stage en développement backend (Python, Django, FastAPI, Docker) ou en DevOps junior, pour rejoindre une équipe et contribuer à de vrais projets. Je suis aussi ouvert aux missions de développement d’application : si vous avez une idée à transformer en produit, parlons-en.</p>
               <p className="mb-0">
                 <a 
-                  href="mailto:mamadouseck1357@gmail.com?subject=Proposition d'alternance / stage / mission" 
+                  href="https://wa.me/221770778341?text=Bonjour%20Mamadou%2C%20je%20vous%20contacte%20depuis%20votre%20portfolio."
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-white py-3 px-4"
                 >
-                  Me contacter
+                  Me contacter sur WhatsApp
                 </a>
               </p>
             </div>
