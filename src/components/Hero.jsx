@@ -78,30 +78,30 @@ export default function Hero() {
 
               {/* Panneau de texte STATIQUE sur le côté gauche */}
               <div className="one-forth d-flex align-items-center">
-                <motion.div 
-                  initial={{ y: 30, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}
-                  className="text"
-                >
-                  <span className="subheading">Bonjour, je suis Mamadou Seck</span>
-                  <h1 className="mb-4 mt-3" style={{ fontSize: '40px', lineHeight: '1.2' }}>
-                Développeur Backend Python & DevOps |<span> Django, Docker, Linux</span>
-                  </h1>
-                  <p className="mb-4" style={{ fontFamily: '"Times New Roman", Times, serif' }}>
-                    Développeur backend Python, je conçois des API et des architectures propres, de la modélisation des bases de données jusqu’au déploiement. Étudiant en Licence 3 d’Informatique Appliquée à la Gestion des Entreprises (IAGE) à l’ISI Dakar, j’allie rigueur technique et culture DevOps.
-                    Stagiaire développeur backend chez Formuloo, je travaille à distance avec des développeurs seniors, en méthode Agile/Scrum avec Jira, et j’y renforce mes bases en Django REST Framework.
-                      Je cherche une alternance ou un stage en développement backend Python pour rejoindre une équipe ambitieuse.
-                  </p>
-                  <p>
-                    <a href="#projects-section" onClick={(e) => handleScrollTo(e, 'projects-section')} className="btn btn-primary mr-2">
-                      Voir mes projets
-                    </a> 
-                    <a href="/cv_seck.pdf" target="_blank" className="btn btn-primary btn-outline-primary">
-                      Télécharger mon CV
-                    </a>
-                  </p>
-                </motion.div>
+  <motion.div 
+    initial={{ y: 30, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 0.8, ease: 'easeOut' }}
+    className="text"
+  >
+    <span className="subheading">Bonjour, je suis Mamadou Seck</span>
+    <h1 className="mb-3 mt-1" style={{ fontSize: '34px', lineHeight: '1.2' }}>
+  Développeur Backend Python & DevOps |<span> Django, Docker, Linux</span>
+    </h1>
+    <p className="mb-3" style={{ fontFamily: '"Times New Roman", Times, serif', fontSize: '15px', lineHeight: '1.5' }}>
+      Développeur backend Python, je conçois des API et des architectures propres, de la modélisation des bases de données jusqu’au déploiement. Étudiant en Licence 3 d’Informatique Appliquée à la Gestion des Entreprises (IAGE) à l’ISI Dakar, j’allie rigueur technique et culture DevOps.
+      Stagiaire développeur backend chez Formuloo, je travaille à distance avec des développeurs seniors, en méthode Agile/Scrum avec Jira, et j’y renforce mes bases en Django REST Framework.
+        Je cherche une alternance ou un stage en développement backend Python pour rejoindre une équipe ambitieuse en janvier 2027.
+    </p>
+    <p>
+      <a href="#projects-section" onClick={(e) => handleScrollTo(e, 'projects-section')} className="btn btn-primary mr-2">
+        Voir mes projets
+      </a> 
+      <a href="/cv_seck.pdf" target="_blank" className="btn btn-primary btn-outline-primary">
+        Télécharger mon CV
+      </a>
+    </p>
+  </motion.div>
               </div>
             </div>
           </div>
