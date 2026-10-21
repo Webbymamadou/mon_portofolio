@@ -6,22 +6,22 @@ const SERVICES = [
   {
     icon: 'flaticon-web-programming',
     title: 'Développement Backend Python',
-    desc: "Développement d'API REST avec Django, Django REST Framework et FastAPI : modélisation ORM, authentification JWT, documentation Swagger / OpenAPI."
+    desc: "Je construis des API REST avec Django, Django REST Framework et FastAPI : ORM, authentification JWT, documentation Swagger / OpenAPI."
   },
   {
     icon: 'flaticon-computer',
     title: 'Conception & Gestion de BD',
-    desc: 'Modélisation de bases de données relationnelles avec UML et Merise, écriture de requêtes SQL sur PostgreSQL et MySQL.'
+    desc: 'Je modélise les données avec UML et Merise, puis j’écris les requêtes SQL sur PostgreSQL et MySQL.'
   },
   {
     icon: 'flaticon-vector',
     title: 'DevOps & Conteneurisation',
-    desc: 'Conteneurisation avec Docker / Docker Compose, déploiement sur serveurs Linux, reverse proxy Nginx et notions de CI/CD avec GitHub Actions.'
+    desc: 'J’empaquette les applications avec Docker et Docker Compose, je les déploie sur des serveurs Linux derrière Nginx, et je commence à automatiser avec GitHub Actions (CI/CD).'
   },
   {
     icon: 'flaticon-app-development',
     title: 'Intégration & Outils',
-    desc: "Intégration frontend avec HTML, CSS et Bootstrap, gestion de versions avec Git/GitHub, tests d'APIs avec Postman."
+    desc: "Je relie le backend à l’interface (HTML, CSS, Bootstrap), je teste les API avec Postman et je gère le code avec Git et GitHub."
   }
 ];
 
@@ -47,9 +47,9 @@ export default function Services() {
         {/* Titre de section */}
         <div className="row justify-content-center">
           <div className="col-md-12 heading-section text-center mb-5">
-            <span className="subheading">Mes domaines d'activité</span>
+            <span className="subheading">Ce que je peux faire pour vous</span>
             <h2 className="mb-4">Ingénierie Backend &amp; DevOps</h2>
-            <p>Je conçois des architectures backend robustes, des APIs performantes et j'automatise le déploiement et la maintenance de solutions logicielles.</p>
+            <p>Je transforme un besoin en application qui tourne en ligne : API, base de données, déploiement. Disponible pour des missions de développement, et pour une alternance à partir de janvier 2027.</p>
           </div>
         </div>
 

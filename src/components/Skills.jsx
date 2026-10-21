@@ -34,7 +34,7 @@ const SKILLS = [
     subtitle1: 'Niveau',
     desc1: 'Junior',
     subtitle2: 'Outils',
-    desc2: 'Nginx, SSH, CI/CD (jenkins)',
+    desc2: 'Docker, Nginx, SSH, CI/CD (jenkins)',
   },
   {
     name: 'Outils & Versioning',
