@@ -8,14 +8,13 @@ const PROJECTS = [
     subtitle: 'Gestion intégrée pour une entreprise de distribution',
     bg: '/images/work-2.jpg',
     problem:
-      'Une entreprise de distribution suit ses stocks sur plusieurs entrepôts, et ses commerciaux prennent les commandes aussi bien au bureau que sur le terrain.',
+      'Une entreprise de distribution suit ses stocks sur plusieurs entrepôts, et ses commerciaux prennent les commandes au bureau comme sur le terrain.',
     tech: ['Django REST Framework', 'PostgreSQL', 'Tailwind CSS', 'JavaScript'],
     features:
       'Clients et stocks multi-entrepôts, prise de commande bureau et terrain, tableau de bord et gestion des rôles (RBAC).',
     link: null,
     site: null,
     linkType: 'private',
-    linkText: 'Code privé',
   },
   {
     title: 'KP — Librairie Papeterie',
@@ -23,13 +22,12 @@ const PROJECTS = [
     bg: '/images/work-4.jpg',
     problem:
       'Chaque boutique présente son catalogue en ligne, et les clients commandent directement par WhatsApp.',
-    tech: ['Django REST Framework', 'PostgreSQL', 'React (Vite)', 'JWT'],
+    tech: ['Django REST Framework', 'PostgreSQL', 'React', 'JWT'],
     features:
       'Catalogue par boutique avec recherche et filtres, commande via WhatsApp et espace de gestion sécurisé par boutique.',
     link: null,
     site: 'https://www.lpkkas.sn/',
     linkType: 'private',
-    linkText: 'Code privé',
   },
   {
     title: 'SaaS WebBuilder PME',
@@ -43,7 +41,6 @@ const PROJECTS = [
     link: 'https://github.com/Webbymamadou/GIGRH_App',
     site: null,
     linkType: 'github',
-    linkText: 'Code source GitHub',
   },
   {
     title: 'DevConnect',
@@ -57,152 +54,70 @@ const PROJECTS = [
     link: 'https://github.com/Webbymamadou/DevConnect',
     site: null,
     linkType: 'github',
-    linkText: 'Code source GitHub',
   },
   {
     title: 'Portfolio Professionnel',
-    subtitle: 'Ce site meme',
+    subtitle: 'Ce site même',
     bg: '/images/work-3.jpg',
     problem:
       'Présenter mon profil, mes compétences et mes projets de façon claire et agréable à parcourir.',
-    tech: ['React 19', 'Framer Motion', 'Sass', 'GitHub Actions'],
+    tech: ['React', 'Framer Motion', 'Sass', 'GitHub Actions'],
     features:
       'Jauges circulaires SVG animées, workflow CI/CD et interface responsive.',
     link: 'https://github.com/Webbymamadou/mon_portofolio',
     site: null,
     linkType: 'github',
-    linkText: 'Code source GitHub',
   },
   {
     title: 'Oustaz Agro Business',
     subtitle: 'Plateforme de gestion avicole intégrée',
     bg: '/images/work-6.jpg',
     problem:
-      'Digitaliser et centraliser la gestion d’un élevage avicole : suivi des poulets, récolte des œufs, gestion des stocks, commandes, livraisons et finances.',
+      'Digitaliser et centraliser la gestion d’un élevage avicole : suivi des poulets, récolte des œufs, stocks, commandes, livraisons et finances.',
     tech: [
-      'React 19',
+      'React',
       'TypeScript',
       'Django REST Framework',
-      'PostgreSQL 16',
+      'PostgreSQL',
       'Docker',
       'Nginx',
     ],
     features:
-      'Application PWA installable, gestion multi-rôles avec JWT, suivi des bandes et de la mortalité, gestion des stocks, commandes et livraisons, suivi de trésorerie et architecture conteneurisée.',
+      'Application PWA installable, gestion multi-rôles avec JWT, suivi des bandes et de la mortalité, gestion des stocks, commandes, livraisons, trésorerie et architecture conteneurisée.',
     link: null,
     site: null,
     linkType: 'private',
-    linkText: 'Code privé',
   },
 ];
 
-// Icônes officielles Devicon.
-// Les technologies sans icône dédiée dans cette liste utilisent leurs initiales.
+/*
+ * Les icônes ci-dessous utilisent Font Awesome 4.7,
+ * déjà chargé dans le index.html du projet.
+ */
 const TECH_ICONS = {
-  'Django REST Framework': {
-    icon: 'devicon-django-plain',
-    label: 'Django REST Framework',
-    short: 'DRF',
-  },
-  Django: {
-    icon: 'devicon-django-plain',
-    label: 'Django',
-    short: 'Dj',
-  },
-  PostgreSQL: {
-    icon: 'devicon-postgresql-plain',
-    label: 'PostgreSQL',
-    short: 'PG',
-  },
-  'PostgreSQL 16': {
-    icon: 'devicon-postgresql-plain',
-    label: 'PostgreSQL 16',
-    short: 'PG',
-  },
-  React: {
-    icon: 'devicon-react-original',
-    label: 'React',
-    short: 'R',
-  },
-  'React (Vite)': {
-    icon: 'devicon-react-original',
-    label: 'React avec Vite',
-    short: 'R',
-  },
-  'React 19': {
-    icon: 'devicon-react-original',
-    label: 'React 19',
-    short: 'R',
-  },
-  JavaScript: {
-    icon: 'devicon-javascript-plain',
-    label: 'JavaScript',
-    short: 'JS',
-  },
-  TypeScript: {
-    icon: 'devicon-typescript-plain',
-    label: 'TypeScript',
-    short: 'TS',
-  },
-  'Tailwind CSS': {
-    icon: 'devicon-tailwindcss-original',
-    label: 'Tailwind CSS',
-    short: 'TW',
-  },
-  FastAPI: {
-    icon: 'devicon-fastapi-plain',
-    label: 'FastAPI',
-    short: 'FA',
-  },
-  Docker: {
-    icon: 'devicon-docker-plain',
-    label: 'Docker',
-    short: 'D',
-  },
-  PostgreSQL: {
-    icon: 'devicon-postgresql-plain',
-    label: 'PostgreSQL',
-    short: 'PG',
-  },
-  Celery: {
-    icon: null,
-    label: 'Celery',
-    short: 'Ce',
-  },
-  JWT: {
-    icon: null,
-    label: 'JWT',
-    short: 'JWT',
-  },
-  Sass: {
-    icon: 'devicon-sass-original',
-    label: 'Sass',
-    short: 'Sa',
-  },
-  'Framer Motion': {
-    icon: null,
-    label: 'Framer Motion',
-    short: 'FM',
-  },
-  'GitHub Actions': {
-    icon: 'devicon-github-original',
-    label: 'GitHub Actions',
-    short: 'GH',
-  },
-  Nginx: {
-    icon: 'devicon-nginx-original',
-    label: 'Nginx',
-    short: 'N',
-  },
+  'Django REST Framework': { icon: 'fa-code', short: 'DRF' },
+  Django: { icon: 'fa-leaf', short: 'Dj' },
+  PostgreSQL: { icon: 'fa-database', short: 'PG' },
+  'Tailwind CSS': { icon: 'fa-paint-brush', short: 'TW' },
+  JavaScript: { icon: 'fa-file-code-o', short: 'JS' },
+  React: { icon: 'fa-code', short: 'R' },
+  JWT: { icon: 'fa-lock', short: 'JWT' },
+  Celery: { icon: 'fa-tasks', short: 'Ce' },
+  Docker: { icon: 'fa-cube', short: 'D' },
+  FastAPI: { icon: 'fa-bolt', short: 'FA' },
+  'Framer Motion': { icon: 'fa-magic', short: 'FM' },
+  Sass: { icon: 'fa-paint-brush', short: 'Sa' },
+  'GitHub Actions': { icon: 'fa-github', short: 'GH' },
+  TypeScript: { icon: 'fa-file-code-o', short: 'TS' },
+  Nginx: { icon: 'fa-server', short: 'N' },
 };
 
-function TechIcons({ technologies }) {
+function TechIcons({ technologies = [] }) {
   return (
     <div className="project-tech-icons" aria-label="Technologies utilisées">
       {technologies.map((technology) => {
         const tech = TECH_ICONS[technology] || {
-          icon: null,
-          label: technology,
+          icon: 'fa-code',
           short: technology.slice(0, 2),
         };
 
@@ -210,16 +125,11 @@ function TechIcons({ technologies }) {
           <span
             key={technology}
             className="project-tech-icon"
-            title={tech.label}
-            aria-label={tech.label}
+            title={technology}
+            aria-label={technology}
           >
-            {tech.icon ? (
-              <i className={tech.icon} aria-hidden="true" />
-            ) : (
-              <span className="project-tech-fallback" aria-hidden="true">
-                {tech.short}
-              </span>
-            )}
+            <i className={`fa ${tech.icon}`} aria-hidden="true" />
+            <span className="project-tech-tooltip">{technology}</span>
           </span>
         );
       })}
@@ -232,14 +142,11 @@ function ProjectModal({ project, onClose }) {
     if (!project) return undefined;
 
     const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        onClose();
-      }
+      if (event.key === 'Escape') onClose();
     };
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
@@ -257,9 +164,7 @@ function ProjectModal({ project, onClose }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onMouseDown={(event) => {
-            if (event.target === event.currentTarget) {
-              onClose();
-            }
+            if (event.target === event.currentTarget) onClose();
           }}
         >
           <motion.div
@@ -267,23 +172,22 @@ function ProjectModal({ project, onClose }) {
             role="dialog"
             aria-modal="true"
             aria-labelledby="project-modal-title"
-            initial={{ opacity: 0, y: 30, scale: 0.97 }}
+            initial={{ opacity: 0, y: 25, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.98 }}
+            exit={{ opacity: 0, y: 15, scale: 0.98 }}
             transition={{ duration: 0.25 }}
           >
             <button
               type="button"
               className="project-modal-close"
               onClick={onClose}
-              aria-label="Fermer les détails du projet"
+              aria-label="Fermer"
             >
               &times;
             </button>
 
             <div className="project-modal-image">
               <img src={project.bg} alt={`Aperçu de ${project.title}`} />
-
               <span className="project-modal-category">
                 {project.linkType === 'private'
                   ? 'Projet client'
@@ -293,7 +197,6 @@ function ProjectModal({ project, onClose }) {
 
             <div className="project-modal-content">
               <p className="project-modal-subtitle">{project.subtitle}</p>
-
               <h3 id="project-modal-title">{project.title}</h3>
 
               <div className="project-modal-section">
@@ -373,9 +276,7 @@ export default function Projects() {
         <div className="row justify-content-center pb-5">
           <div className="col-md-10 heading-section text-center">
             <span className="subheading">Ce que j'ai construit</span>
-
             <h2 className="mb-4">Mes projets</h2>
-
             <p className="projects-intro">
               Des projets web et des applications de gestion conçus pour
               répondre à des besoins concrets. Cliquez sur un projet pour
@@ -389,12 +290,13 @@ export default function Projects() {
             <motion.article
               key={project.title}
               className="project-card"
-              initial={{ opacity: 0, y: 35 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 35 }}
-              transition={{
-                duration: 0.45,
-                delay: index * 0.08,
-              }}
+              initial={{ opacity: 0, y: 25 }}
+              animate={
+                isVisible
+                  ? { opacity: 1, y: 0 }
+                  : { opacity: 0, y: 25 }
+              }
+              transition={{ duration: 0.4, delay: index * 0.07 }}
             >
               <button
                 type="button"
@@ -408,9 +310,8 @@ export default function Projects() {
                     alt={`Aperçu du projet ${project.title}`}
                     loading="lazy"
                   />
-
                   <span className="project-card-open">
-                    <i className="fa fa-arrow-up-right-from-square" aria-hidden="true" />
+                    <i className="fa fa-external-link" aria-hidden="true" />
                     Découvrir
                   </span>
                 </div>
@@ -418,7 +319,6 @@ export default function Projects() {
                 <div className="project-card-content">
                   <div className="project-card-heading">
                     <h3>{project.title}</h3>
-
                     <span
                       className={`project-access ${
                         project.linkType === 'private'
@@ -434,10 +334,7 @@ export default function Projects() {
                         }`}
                         aria-hidden="true"
                       />
-
-                      {project.linkType === 'private'
-                        ? 'Code privé'
-                        : 'GitHub'}
+                      {project.linkType === 'private' ? 'Code privé' : 'GitHub'}
                     </span>
                   </div>
 
@@ -464,8 +361,8 @@ export default function Projects() {
       <style>{`
         .projects-modern {
           background: #fafaf8;
-          padding-top: 100px;
-          padding-bottom: 100px;
+          padding-top: 90px;
+          padding-bottom: 90px;
         }
 
         .projects-modern .projects-intro {
@@ -479,7 +376,8 @@ export default function Projects() {
         .projects-modern .projects-grid {
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 28px;
+          column-gap: 24px;
+          row-gap: 30px;
         }
 
         .projects-modern .project-card {
@@ -494,8 +392,8 @@ export default function Projects() {
         }
 
         .projects-modern .project-card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 15px 35px rgba(25, 25, 25, 0.09);
+          transform: translateY(-5px);
+          box-shadow: 0 13px 30px rgba(25, 25, 25, 0.09);
         }
 
         .projects-modern .project-card-click {
@@ -519,7 +417,7 @@ export default function Projects() {
 
         .projects-modern .project-card-image {
           position: relative;
-          height: 215px;
+          height: 205px;
           overflow: hidden;
           background: #efefeb;
         }
@@ -530,23 +428,23 @@ export default function Projects() {
           inset: 0;
           background: linear-gradient(
             180deg,
-            rgba(0, 0, 0, 0.02) 30%,
-            rgba(0, 0, 0, 0.55) 100%
+            transparent 30%,
+            rgba(0, 0, 0, 0.5) 100%
           );
           opacity: 0;
           transition: opacity 0.25s ease;
         }
 
         .projects-modern .project-card-image img {
+          display: block;
           width: 100%;
           height: 100%;
-          display: block;
           object-fit: cover;
-          transition: transform 0.45s ease;
+          transition: transform 0.4s ease;
         }
 
         .projects-modern .project-card:hover .project-card-image img {
-          transform: scale(1.055);
+          transform: scale(1.045);
         }
 
         .projects-modern .project-card:hover .project-card-image::after {
@@ -556,19 +454,19 @@ export default function Projects() {
         .projects-modern .project-card-open {
           position: absolute;
           z-index: 1;
-          bottom: 16px;
-          right: 16px;
+          bottom: 14px;
+          right: 14px;
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          padding: 9px 13px;
+          gap: 7px;
+          padding: 9px 12px;
           border-radius: 7px;
           background: #fff;
           color: #242424;
           font-size: 12px;
           font-weight: 600;
           opacity: 0;
-          transform: translateY(6px);
+          transform: translateY(5px);
           transition: opacity 0.25s ease, transform 0.25s ease;
         }
 
@@ -582,20 +480,20 @@ export default function Projects() {
           display: flex;
           flex-direction: column;
           flex: 1;
-          padding: 21px 22px 17px;
+          padding: 20px 20px 16px;
         }
 
         .projects-modern .project-card-heading {
           display: flex;
           align-items: flex-start;
           justify-content: space-between;
-          gap: 10px;
+          gap: 8px;
         }
 
         .projects-modern .project-card-heading h3 {
           margin: 0;
           color: #202020;
-          font-size: 19px;
+          font-size: 18px;
           line-height: 1.4;
           font-weight: 700;
           overflow-wrap: anywhere;
@@ -624,7 +522,7 @@ export default function Projects() {
         }
 
         .projects-modern .project-card-subtitle {
-          margin: 8px 0 17px;
+          margin: 8px 0 12px;
           color: #858585;
           font-size: 13px;
           line-height: 1.6;
@@ -634,13 +532,14 @@ export default function Projects() {
           display: flex;
           flex-wrap: wrap;
           align-items: center;
-          gap: 10px;
+          gap: 9px;
           margin-top: auto;
-          padding: 13px 0 16px;
+          padding: 12px 0 15px;
           border-bottom: 1px solid #f0f0ed;
         }
 
         .projects-modern .project-tech-icon {
+          position: relative;
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -650,7 +549,7 @@ export default function Projects() {
           border-radius: 9px;
           background: #fafaf8;
           color: #555;
-          font-size: 21px;
+          font-size: 19px;
           transition: transform 0.2s ease, background 0.2s ease;
         }
 
@@ -659,17 +558,35 @@ export default function Projects() {
           transform: translateY(-2px);
         }
 
-        .projects-modern .project-tech-fallback {
-          font-size: 10px;
-          font-weight: 800;
-          letter-spacing: -0.3px;
+        .projects-modern .project-tech-tooltip {
+          position: absolute;
+          z-index: 10;
+          bottom: calc(100% + 8px);
+          left: 50%;
+          padding: 5px 8px;
+          border-radius: 5px;
+          background: #222;
+          color: #fff;
+          font-family: Arial, sans-serif;
+          font-size: 11px;
+          font-weight: 500;
+          white-space: nowrap;
+          opacity: 0;
+          pointer-events: none;
+          transform: translate(-50%, 4px);
+          transition: opacity 0.15s ease, transform 0.15s ease;
+        }
+
+        .projects-modern .project-tech-icon:hover .project-tech-tooltip {
+          opacity: 1;
+          transform: translate(-50%, 0);
         }
 
         .projects-modern .project-card-footer {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding-top: 15px;
+          padding-top: 14px;
           color: #858585;
           font-size: 12px;
           font-weight: 600;
@@ -684,8 +601,7 @@ export default function Projects() {
           transform: translateX(4px);
         }
 
-        /* Fenêtre de détails */
-
+        /* Fenêtre des détails */
         .project-modal-backdrop {
           position: fixed;
           z-index: 99999;
@@ -693,7 +609,7 @@ export default function Projects() {
           display: flex;
           align-items: center;
           justify-content: center;
-          padding: 22px;
+          padding: 20px;
           overflow-y: auto;
           background: rgba(16, 18, 20, 0.72);
           backdrop-filter: blur(5px);
@@ -703,7 +619,7 @@ export default function Projects() {
           position: relative;
           width: 100%;
           max-width: 680px;
-          max-height: calc(100vh - 44px);
+          max-height: calc(100vh - 40px);
           overflow-y: auto;
           border-radius: 16px;
           background: #fff;
@@ -723,7 +639,7 @@ export default function Projects() {
           padding: 0;
           border: 1px solid rgba(255, 255, 255, 0.5);
           border-radius: 50%;
-          background: rgba(20, 20, 20, 0.65);
+          background: rgba(20, 20, 20, 0.7);
           color: #fff;
           font-size: 28px;
           line-height: 1;
@@ -732,7 +648,7 @@ export default function Projects() {
 
         .project-modal-image {
           position: relative;
-          height: 240px;
+          height: 230px;
           background: #efefeb;
         }
 
@@ -756,7 +672,7 @@ export default function Projects() {
         }
 
         .project-modal-content {
-          padding: 27px 30px 30px;
+          padding: 26px 28px 28px;
         }
 
         .project-modal-subtitle {
@@ -767,15 +683,15 @@ export default function Projects() {
         }
 
         .project-modal-content h3 {
-          margin: 0 0 24px;
+          margin: 0 0 22px;
           color: #222;
-          font-size: 27px;
+          font-size: 26px;
           font-weight: 700;
           overflow-wrap: anywhere;
         }
 
         .project-modal-section {
-          margin-bottom: 22px;
+          margin-bottom: 20px;
         }
 
         .project-modal-section h4 {
@@ -799,7 +715,7 @@ export default function Projects() {
         }
 
         .project-modal-tech span {
-          padding: 7px 11px;
+          padding: 7px 10px;
           border: 1px solid #e8e8e3;
           border-radius: 6px;
           background: #fafaf8;
@@ -811,8 +727,8 @@ export default function Projects() {
           display: flex;
           flex-wrap: wrap;
           gap: 10px;
-          margin-top: 25px;
-          padding-top: 20px;
+          margin-top: 24px;
+          padding-top: 18px;
           border-top: 1px solid #eeeeea;
         }
 
@@ -822,7 +738,7 @@ export default function Projects() {
           justify-content: center;
           gap: 9px;
           min-height: 42px;
-          padding: 11px 16px;
+          padding: 10px 15px;
           border-radius: 7px;
           font-size: 13px;
           font-weight: 600;
@@ -832,7 +748,6 @@ export default function Projects() {
         .project-action-primary {
           background: #f2761d;
           color: #fff !important;
-          transition: background 0.2s ease;
         }
 
         .project-action-primary:hover {
@@ -848,31 +763,32 @@ export default function Projects() {
         @media (max-width: 991px) {
           .projects-modern .projects-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 22px;
+            column-gap: 20px;
+            row-gap: 26px;
           }
         }
 
         @media (max-width: 575px) {
           .projects-modern {
-            padding-top: 65px;
-            padding-bottom: 65px;
+            padding-top: 60px;
+            padding-bottom: 60px;
           }
 
           .projects-modern .projects-grid {
             grid-template-columns: 1fr;
-            gap: 20px;
+            row-gap: 22px;
           }
 
           .projects-modern .project-card-image {
-            height: 220px;
+            height: 215px;
           }
 
           .projects-modern .project-card-content {
-            padding: 19px;
+            padding: 18px;
           }
 
           .projects-modern .project-card-heading h3 {
-            font-size: 18px;
+            font-size: 17px;
           }
 
           .projects-modern .project-card-open {
@@ -881,24 +797,24 @@ export default function Projects() {
           }
 
           .project-modal-backdrop {
-            padding: 12px;
+            padding: 10px;
           }
 
           .project-modal {
-            max-height: calc(100vh - 24px);
+            max-height: calc(100vh - 20px);
             border-radius: 12px;
           }
 
           .project-modal-image {
-            height: 190px;
+            height: 180px;
           }
 
           .project-modal-content {
-            padding: 22px 19px;
+            padding: 21px 18px;
           }
 
           .project-modal-content h3 {
-            font-size: 23px;
+            font-size: 22px;
           }
         }
 
