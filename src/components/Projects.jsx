@@ -57,7 +57,7 @@ const PROJECTS = [
   },
   {
     title: 'Portfolio Professionnel',
-    subtitle: 'Ce site meme',
+    subtitle: 'Ce site même',
     bg: '/images/work-3.jpg',
     problem:
       'Présenter mon profil, mes compétences et mes projets de façon claire et agréable à parcourir.',
