@@ -130,7 +130,7 @@ export default function Hero() {
                 <a href="#projects-section" onClick={(e) => handleScrollTo(e, 'projects-section')} className="btn btn-primary mr-2">
                   Voir mes projets
                 </a>
-                <a href="/cv_pro_seck.pdf" target="_blank" className="btn btn-primary btn-outline-primary">
+                <a href="/cv_seck.pdf" target="_blank" className="btn btn-primary btn-outline-primary">
                   Télécharger mon CV
                 </a>
               </p>
