@@ -18,7 +18,7 @@ export default function HireMe() {
             className="col-md-8 col-lg-8 d-flex align-items-center"
           >
             <div className="w-100 py-4">
-              <h2>Disponible dès janvier 2027</h2>
+              <h2>Disponible dès décembre 2026</h2>
               <p>Je cherche une alternance ou un stage en développement backend (Python, Django, FastAPI, Docker) ou en DevOps junior, pour rejoindre une équipe et contribuer à de vrais projets. Je suis aussi ouvert aux missions de développement d’application : si vous avez une idée à transformer en produit, parlons-en.</p>
               <p className="mb-0">
                 <a 

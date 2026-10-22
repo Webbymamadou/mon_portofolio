@@ -49,7 +49,7 @@ export default function Services() {
           <div className="col-md-12 heading-section text-center mb-5">
             <span className="subheading">Ce que je peux faire pour vous</span>
             <h2 className="mb-4">Ingénierie Backend &amp; DevOps</h2>
-            <p>Je transforme un besoin en application qui tourne en ligne : API, base de données, déploiement. Disponible pour des missions de développement, et pour une alternance à partir de janvier 2027.</p>
+            <p>Je transforme un besoin en application qui tourne en ligne : API, base de données, déploiement. Disponible pour des missions de développement, et pour une alternance à partir de décembre 2026.</p>
           </div>
         </div>
 

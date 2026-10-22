@@ -4,6 +4,19 @@ import useIntersection from '../hooks/useIntersection';
 
 const PROJECTS = [
   {
+    title: 'E³ — Étudiants · Écoles · Entreprises',
+    subtitle: 'Plateforme nationale éducation-recrutement (Projet Ndamli)',
+    bg: '/images/work-1.jpg',
+    problem:
+      'Connecter la formation à l\'emploi au Sénégal : permettre aux étudiants de valoriser leurs compétences vérifiées, aux écoles de suivre leurs diplômés, et aux entreprises de recruter efficacement.',
+    tech: ['Django REST Framework', 'React', 'PostgreSQL', 'Docker'],
+    features:
+      'Profils vérifiés, offres de stage/emploi, suivi des candidatures en temps réel, délivrance de badges de compétences et architecture conteneurisée.',
+    link: null,
+    site: null,
+    linkType: 'private',
+  },
+  {
     title: 'DistriManager',
     subtitle: 'Gestion intégrée pour une entreprise de distribution',
     bg: '/images/work-2.jpg',
@@ -95,21 +108,22 @@ const PROJECTS = [
  * déjà chargé dans le index.html du projet.
  */
 const TECH_ICONS = {
-  'Django REST Framework': { icon: 'fa-code', short: 'DRF' },
-  Django: { icon: 'fa-leaf', short: 'Dj' },
-  PostgreSQL: { icon: 'fa-database', short: 'PG' },
-  'Tailwind CSS': { icon: 'fa-paint-brush', short: 'TW' },
-  JavaScript: { icon: 'fa-file-code-o', short: 'JS' },
-  React: { icon: 'fa-code', short: 'R' },
-  JWT: { icon: 'fa-lock', short: 'JWT' },
-  Celery: { icon: 'fa-tasks', short: 'Ce' },
-  Docker: { icon: 'fa-cube', short: 'D' },
-  FastAPI: { icon: 'fa-bolt', short: 'FA' },
-  'Framer Motion': { icon: 'fa-magic', short: 'FM' },
-  Sass: { icon: 'fa-paint-brush', short: 'Sa' },
-  'GitHub Actions': { icon: 'fa-github', short: 'GH' },
-  TypeScript: { icon: 'fa-file-code-o', short: 'TS' },
-  Nginx: { icon: 'fa-server', short: 'N' },
+  'Django REST Framework': { icon: 'fa-code', short: 'DRF', color: '#a30000', bg: 'rgba(163, 0, 0, 0.08)' },
+  Django: { icon: 'fa-leaf', short: 'Dj', color: '#092e20', bg: 'rgba(9, 46, 32, 0.09)' },
+  PostgreSQL: { icon: 'fa-database', short: 'PG', color: '#336791', bg: 'rgba(51, 103, 145, 0.1)' },
+  'Tailwind CSS': { icon: 'fa-paint-brush', short: 'TW', color: '#06b6d4', bg: 'rgba(6, 182, 212, 0.1)' },
+  JavaScript: { icon: 'fa-file-code-o', short: 'JS', color: '#d49a00', bg: 'rgba(247, 223, 30, 0.18)' },
+  React: { icon: 'fa-code', short: 'R', color: '#0088cc', bg: 'rgba(97, 218, 251, 0.16)' },
+  JWT: { icon: 'fa-lock', short: 'JWT', color: '#6b46c1', bg: 'rgba(107, 70, 193, 0.1)' },
+  Celery: { icon: 'fa-tasks', short: 'Ce', color: '#37814a', bg: 'rgba(55, 129, 74, 0.1)' },
+  Docker: { icon: 'fa-cube', short: 'D', color: '#2496ed', bg: 'rgba(36, 150, 237, 0.1)' },
+  FastAPI: { icon: 'fa-bolt', short: 'FA', color: '#05998b', bg: 'rgba(5, 153, 139, 0.1)' },
+  'Framer Motion': { icon: 'fa-magic', short: 'FM', color: '#bb2689', bg: 'rgba(187, 38, 137, 0.1)' },
+  Sass: { icon: 'fa-paint-brush', short: 'Sa', color: '#cf649a', bg: 'rgba(207, 100, 154, 0.12)' },
+  'GitHub Actions': { icon: 'fa-github', short: 'GH', color: '#24292e', bg: 'rgba(36, 41, 46, 0.08)' },
+  TypeScript: { icon: 'fa-file-code-o', short: 'TS', color: '#3178c6', bg: 'rgba(49, 120, 198, 0.1)' },
+  Nginx: { icon: 'fa-server', short: 'N', color: '#009639', bg: 'rgba(0, 150, 57, 0.1)' },
+  Python: { icon: 'fa-code', short: 'Py', color: '#3776ab', bg: 'rgba(55, 118, 171, 0.1)' },
 };
 
 function TechIcons({ technologies = [] }) {
@@ -119,16 +133,23 @@ function TechIcons({ technologies = [] }) {
         const tech = TECH_ICONS[technology] || {
           icon: 'fa-code',
           short: technology.slice(0, 2),
+          color: '#555555',
+          bg: '#fafaf8',
         };
 
         return (
           <span
             key={technology}
             className="project-tech-icon"
+            style={{
+              color: tech.color,
+              backgroundColor: tech.bg || '#fafaf8',
+              borderColor: tech.color ? `${tech.color}35` : '#f0f0ed',
+            }}
             title={technology}
             aria-label={technology}
           >
-            <i className={`fa ${tech.icon}`} aria-hidden="true" />
+            <i className={`fa ${tech.icon}`} aria-hidden="true" style={{ color: tech.color }} />
             <span className="project-tech-tooltip">{technology}</span>
           </span>
         );
@@ -554,8 +575,12 @@ export default function Projects() {
         }
 
         .projects-modern .project-card:hover .project-tech-icon {
-          background: #fff;
           transform: translateY(-2px);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .projects-modern .project-tech-icon:hover {
+          filter: brightness(0.94);
         }
 
         .projects-modern .project-tech-tooltip {
