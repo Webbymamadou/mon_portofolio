@@ -11,7 +11,7 @@ const EXPERIENCES = [
     role: 'Développeur Backend Python',
     company: 'Formuloo',
     location: 'Télétravail • Dakar',
-    period: 'Septembre 2026 – Décembre 2026',
+    period: 'Septembre 2026 – Novembre 2026',
     contract: 'Stage professionnel',
     badgeIcon: 'fa-building-o',
     summary:
