@@ -647,6 +647,39 @@ export default function Experience() {
         .tech-badge:hover {
           background: #e4e7d6;
         }
+
+        @media (max-width: 768px) {
+          .experience-section {
+            padding: 4.5em 0;
+          }
+          .experience-filter-btn {
+            padding: 7px 14px;
+            font-size: 13px;
+          }
+          .exp-role-title {
+            font-size: 19px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .experience-filter-group {
+            border-radius: 20px;
+            width: 100%;
+          }
+          .experience-filter-btn {
+            flex: 1 1 auto;
+            text-align: center;
+          }
+          .exp-card-header,
+          .exp-body {
+            padding: 16px 14px;
+          }
+          .exp-meta-info {
+            gap: 10px;
+            flex-direction: column;
+          }
+        }
+
       `}</style>
     </section>
   );
