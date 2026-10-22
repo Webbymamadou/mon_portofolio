@@ -64,7 +64,6 @@ const EXPERIENCES = [
       'Trello / Scrum',
     ],
   },
-
   {
     id: 'oustaz-agro',
     type: 'mission',
@@ -122,7 +121,7 @@ const EXPERIENCES = [
     id: 'distrimanager',
     type: 'mission',
     status: 'in_progress',
-    statusLabel: 'Finalisation',
+    statusLabel: 'Terminée',
     role: 'Architecte & Développeur Backend',
     company: 'Entreprise de Distribution',
     location: 'Sénégal',
@@ -155,11 +154,19 @@ const FILTERS = [
 export default function Experience() {
   const [ref, isVisible] = useIntersection({ threshold: 0.1, triggerOnce: true });
   const [activeFilter, setActiveFilter] = useState('all');
+  const [hoveredId, setHoveredId] = useState(null);
+  const [expandedId, setExpandedId] = useState(null);
 
   const filteredExperiences = EXPERIENCES.filter((exp) => {
     if (activeFilter === 'all') return true;
     return exp.type === activeFilter;
   });
+
+  const handleCardToggle = (id, e) => {
+    // Si l'utilisateur clique sur un lien (ex: bouton Visiter), laisser le lien agir
+    if (e.target.closest('a')) return;
+    setExpandedId((prev) => (prev === id ? null : id));
+  };
 
   return (
     <section ref={ref} className="ftco-section experience-section" id="experience-section">
@@ -171,7 +178,7 @@ export default function Experience() {
             <h2 className="mb-4">Expériences &amp; Missions</h2>
             <p className="experience-intro">
               Stages en entreprise, missions de développement d’applications et diagnostics de besoins métiers. 
-              Chaque expérience allie rigueur technique, modélisation de données et livrables concrets.
+              Survolez ou appuyez sur une carte pour explorer les détails, missions et technologies.
             </p>
           </div>
         </div>
@@ -207,109 +214,159 @@ export default function Experience() {
               transition={{ duration: 0.3 }}
               className="experience-grid"
             >
-              {filteredExperiences.map((exp, index) => (
-                <motion.article
-                  key={exp.id}
-                  className="experience-card"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                  transition={{ duration: 0.4, delay: index * 0.08 }}
-                >
-                  {/* Bandeau supérieur : Rôle, Entreprise, Période & Statut */}
-                  <div className="exp-card-header">
-                    <div className="exp-header-left">
-                      <div className="exp-company-badge">
-                        <i className={`fa ${exp.badgeIcon}`} aria-hidden="true" />
-                        <span>{exp.company}</span>
-                        <span className="exp-contract-tag">• {exp.contract}</span>
-                      </div>
-                      <h3 className="exp-role-title">{exp.role}</h3>
-                      <div className="exp-meta-info">
-                        <span className="exp-period">
-                          <i className="fa fa-calendar-o mr-1" aria-hidden="true" />
-                          {exp.period}
-                        </span>
-                        <span className="exp-location">
-                          <i className="fa fa-map-marker mr-1" aria-hidden="true" />
-                          {exp.location}
-                        </span>
-                      </div>
-                    </div>
+              {filteredExperiences.map((exp, index) => {
+                const isExpanded = hoveredId === exp.id || expandedId === exp.id;
 
-                    <div className="exp-header-right">
-                      <span className={`exp-status-pill status-${exp.status}`}>
-                        <span className="status-dot" aria-hidden="true" />
-                        {exp.statusLabel}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Résumé du contexte / Enjeu métier */}
-                  <div className="exp-body">
-                    <div className="exp-summary-block">
-                      <span className="exp-block-title">
-                        <i className="fa fa-info-circle mr-1" aria-hidden="true" />
-                        Contexte &amp; Enjeux
-                      </span>
-                      <p className="exp-summary-text">{exp.summary}</p>
-                    </div>
-
-                    {/* Missions réalisées */}
-                    <div className="exp-missions-block">
-                      <span className="exp-block-title">
-                        <i className="fa fa-check-square-o mr-1" aria-hidden="true" />
-                        Missions &amp; Réalisations
-                      </span>
-                      <ul className="exp-missions-list">
-                        {exp.missions.map((mission, mIdx) => (
-                          <li key={mIdx} className="exp-mission-item">
-                            <i className="fa fa-angle-right exp-bullet-icon" aria-hidden="true" />
-                            <span>{mission}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Plateforme / Livrable associé */}
-                    {exp.platform && (
-                      <div className="exp-platform-box">
-                        <div className="platform-info">
-                          <div className="platform-tag">
-                            <i className="fa fa-rocket mr-1" aria-hidden="true" />
-                            Application &amp; Plateforme réalisée
-                          </div>
-                          <strong className="platform-name">{exp.platform.name}</strong>
-                          <p className="platform-desc">{exp.platform.desc}</p>
+                return (
+                  <motion.article
+                    key={exp.id}
+                    className={`experience-card ${isExpanded ? 'is-expanded' : 'is-collapsed'}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ duration: 0.4, delay: index * 0.08 }}
+                    onMouseEnter={() => setHoveredId(exp.id)}
+                    onMouseLeave={() => setHoveredId(null)}
+                    onClick={(e) => handleCardToggle(exp.id, e)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        handleCardToggle(exp.id, e);
+                      }
+                    }}
+                    aria-expanded={isExpanded}
+                    aria-label={`${exp.role} chez ${exp.company} - ${isExpanded ? 'Réduire' : 'Afficher les détails'}`}
+                  >
+                    {/* Bandeau supérieur (visible en permanence, compact au repos) */}
+                    <div className="exp-card-header">
+                      <div className="exp-header-left">
+                        <div className="exp-company-badge">
+                          <i className={`fa ${exp.badgeIcon}`} aria-hidden="true" />
+                          <span>{exp.company}</span>
+                          <span className="exp-contract-tag">• {exp.contract}</span>
                         </div>
-
-                        {exp.platform.siteUrl && (
-                          <a
-                            href={exp.platform.siteUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="platform-live-btn"
-                          >
-                            <i className="fa fa-external-link mr-1" aria-hidden="true" />
-                            Visiter
-                          </a>
-                        )}
-                      </div>
-                    )}
-
-                    {/* Technologies utilisées */}
-                    <div className="exp-tech-stack">
-                      <span className="tech-label">Stack technique :</span>
-                      <div className="tech-tags">
-                        {exp.technologies.map((tech) => (
-                          <span key={tech} className="tech-badge">
-                            {tech}
+                        <h3 className="exp-role-title">{exp.role}</h3>
+                        <div className="exp-meta-info">
+                          <span className="exp-period">
+                            <i className="fa fa-calendar-o mr-1" aria-hidden="true" />
+                            {exp.period}
                           </span>
-                        ))}
+                          <span className="exp-location">
+                            <i className="fa fa-map-marker mr-1" aria-hidden="true" />
+                            {exp.location}
+                          </span>
+                        </div>
+                      </div>
+
+                      <div className="exp-header-right">
+                        <span className={`exp-status-pill status-${exp.status}`}>
+                          <span className="status-dot" aria-hidden="true" />
+                          {exp.statusLabel}
+                        </span>
+                        <span
+                          className={`exp-toggle-icon ${isExpanded ? 'open' : ''}`}
+                          aria-hidden="true"
+                        >
+                          <i className="fa fa-chevron-down" />
+                        </span>
                       </div>
                     </div>
-                  </div>
-                </motion.article>
-              ))}
+
+                    {/* Contenu détaillé (développé au survol sur PC ou au clic sur mobile) */}
+                    <AnimatePresence initial={false}>
+                      {isExpanded && (
+                        <motion.div
+                          key="details"
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{
+                            height: 'auto',
+                            opacity: 1,
+                            transition: {
+                              height: { duration: 0.35, ease: [0.25, 0.1, 0.25, 1] },
+                              opacity: { duration: 0.25, delay: 0.08 },
+                            },
+                          }}
+                          exit={{
+                            height: 0,
+                            opacity: 0,
+                            transition: {
+                              opacity: { duration: 0.15 },
+                              height: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] },
+                            },
+                          }}
+                          className="exp-collapsible-wrapper"
+                        >
+                          <div className="exp-body">
+                            {/* Résumé du contexte / Enjeu métier */}
+                            <div className="exp-summary-block">
+                              <span className="exp-block-title">
+                                <i className="fa fa-info-circle mr-1" aria-hidden="true" />
+                                Contexte &amp; Enjeux
+                              </span>
+                              <p className="exp-summary-text">{exp.summary}</p>
+                            </div>
+
+                            {/* Missions réalisées */}
+                            <div className="exp-missions-block">
+                              <span className="exp-block-title">
+                                <i className="fa fa-check-square-o mr-1" aria-hidden="true" />
+                                Missions &amp; Réalisations
+                              </span>
+                              <ul className="exp-missions-list">
+                                {exp.missions.map((mission, mIdx) => (
+                                  <li key={mIdx} className="exp-mission-item">
+                                    <i className="fa fa-angle-right exp-bullet-icon" aria-hidden="true" />
+                                    <span>{mission}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+
+                            {/* Plateforme / Livrable associé */}
+                            {exp.platform && (
+                              <div className="exp-platform-box">
+                                <div className="platform-info">
+                                  <div className="platform-tag">
+                                    <i className="fa fa-rocket mr-1" aria-hidden="true" />
+                                    Application &amp; Plateforme réalisée
+                                  </div>
+                                  <strong className="platform-name">{exp.platform.name}</strong>
+                                  <p className="platform-desc">{exp.platform.desc}</p>
+                                </div>
+
+                                {exp.platform.siteUrl && (
+                                  <a
+                                    href={exp.platform.siteUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="platform-live-btn"
+                                  >
+                                    <i className="fa fa-external-link mr-1" aria-hidden="true" />
+                                    Visiter
+                                  </a>
+                                )}
+                              </div>
+                            )}
+
+                            {/* Technologies utilisées */}
+                            <div className="exp-tech-stack">
+                              <span className="tech-label">Stack technique :</span>
+                              <div className="tech-tags">
+                                {exp.technologies.map((tech) => (
+                                  <span key={tech} className="tech-badge">
+                                    {tech}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.article>
+                );
+              })}
             </motion.div>
           </AnimatePresence>
         </div>
@@ -370,7 +427,7 @@ export default function Experience() {
         .experience-grid {
           display: flex;
           flex-direction: column;
-          gap: 28px;
+          gap: 20px;
           max-width: 980px;
           margin: 0 auto;
         }
@@ -380,30 +437,44 @@ export default function Experience() {
           border: 1px solid #e8e8e2;
           border-radius: 16px;
           overflow: hidden;
-          box-shadow: 0 5px 22px rgba(25, 25, 25, 0.04);
+          box-shadow: 0 4px 18px rgba(25, 25, 25, 0.035);
           transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+          cursor: pointer;
+          outline: none;
         }
 
-        .experience-card:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 12px 30px rgba(25, 25, 25, 0.08);
+        .experience-card:hover,
+        .experience-card:focus-visible {
+          transform: translateY(-2px);
+          box-shadow: 0 10px 28px rgba(25, 25, 25, 0.08);
           border-color: #b1b493;
+        }
+
+        .experience-card.is-expanded {
+          border-color: #b1b493;
+          box-shadow: 0 12px 30px rgba(25, 25, 25, 0.08);
         }
 
         .exp-card-header {
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
-          padding: 24px 28px 18px;
+          padding: 22px 28px;
           background: #fbfbf9;
-          border-bottom: 1px solid #f0f0ea;
+          border-bottom: 1px solid transparent;
           gap: 16px;
+          transition: border-bottom-color 0.25s ease, background 0.25s ease;
+        }
+
+        .experience-card.is-expanded .exp-card-header {
+          border-bottom-color: #f0f0ea;
         }
 
         @media (max-width: 768px) {
           .exp-card-header {
             flex-direction: column;
-            padding: 20px 20px 14px;
+            padding: 18px 20px;
+            gap: 14px;
           }
         }
 
@@ -427,7 +498,7 @@ export default function Experience() {
         }
 
         .exp-role-title {
-          font-size: 22px;
+          font-size: 21px;
           font-weight: 700;
           color: #232931;
           margin: 0 0 8px 0;
@@ -440,6 +511,20 @@ export default function Experience() {
           gap: 18px;
           font-size: 13px;
           color: #777;
+        }
+
+        .exp-header-right {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+          .exp-header-right {
+            width: 100%;
+            justify-content: space-between;
+          }
         }
 
         .exp-status-pill {
@@ -496,8 +581,37 @@ export default function Experience() {
           background: #b1b493;
         }
 
+        .exp-toggle-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background: #f0f0ea;
+          color: #7b805c;
+          font-size: 11px;
+          transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1), background 0.25s ease, color 0.25s ease;
+        }
+
+        .experience-card:hover .exp-toggle-icon {
+          background: rgba(177, 180, 147, 0.25);
+          color: #232931;
+        }
+
+        .exp-toggle-icon.open {
+          transform: rotate(180deg);
+          background: #b1b493;
+          color: #ffffff;
+        }
+
+        .exp-collapsible-wrapper {
+          overflow: hidden;
+        }
+
         .exp-body {
           padding: 24px 28px;
+          cursor: default;
         }
 
         @media (max-width: 768px) {
@@ -542,6 +656,8 @@ export default function Experience() {
           font-size: 16px;
           color: #333;
           line-height: 1.5;
+          word-break: break-word;
+          overflow-wrap: anywhere;
         }
 
         .exp-bullet-icon {
@@ -549,6 +665,7 @@ export default function Experience() {
           font-size: 15px;
           margin-top: 3px;
           font-weight: bold;
+          flex-shrink: 0;
         }
 
         .exp-platform-box {
@@ -679,7 +796,6 @@ export default function Experience() {
             flex-direction: column;
           }
         }
-
       `}</style>
     </section>
   );
