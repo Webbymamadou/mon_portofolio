@@ -30,6 +30,42 @@ const EXPERIENCES = [
     technologies: ['Python', 'Django', 'DRF', 'PostgreSQL', 'Docker', 'Git', 'Jira', 'Agile/Scrum'],
   },
   {
+    id: 'e3-ndamli',
+    type: 'mission',
+    status: 'in_progress',
+    statusLabel: 'En cours (MVP)',
+    role: 'Chef de Projet • Développeur Backend & DevOps',
+    company: 'E³ — Étudiants · Écoles · Entreprises (Projet Ndamli)',
+    location: 'Sénégal',
+    period: '2026 – En cours',
+    contract: 'Mission & Plateforme Nationale',
+    badgeIcon: 'fa-graduation-cap',
+    summary:
+      "Plateforme numérique d'envergure nationale reliant étudiants, établissements de formation et entreprises pour connecter la formation à l'emploi au Sénégal. Profils vérifiés, offres de stage/emploi, suivi des candidatures en temps réel et badges de compétences vérifiables.",
+    missions: [
+      'Pilotage du projet : rédaction des cahiers des charges fonctionnel et technique, gestion du backlog Trello, cadrage des sprints et répartition des tâches.',
+      'Gouvernance technique & Qualité : mise en place de la convention Git Flow, revue systématique et validation des Pull Requests avant intégration.',
+      'Conception Backend & API : architecture RESTful modulaire avec Django REST Framework et modélisation relationnelle PostgreSQL (étudiants, écoles, entreprises, candidatures, badges).',
+      'Infrastructure DevOps : conteneurisation intégrale avec Docker et Docker Compose (backend Django, frontend React Vite, proxy Nginx et environnement d’infra).',
+    ],
+    platform: {
+      name: 'Plateforme E³ / Projet Ndamli (MVP en développement)',
+      desc: 'Mise en relation étudiants-écoles-entreprises, délivrance de badges de compétences vérifiables et matching de candidatures.',
+      linkType: 'private',
+    },
+    technologies: [
+      'Django REST Framework',
+      'React (Vite)',
+      'PostgreSQL',
+      'Docker',
+      'Docker Compose',
+      'Nginx',
+      'Git Flow',
+      'Trello / Scrum',
+    ],
+  },
+
+  {
     id: 'oustaz-agro',
     type: 'mission',
     status: 'completed',

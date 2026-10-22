@@ -4,6 +4,19 @@ import useIntersection from '../hooks/useIntersection';
 
 const PROJECTS = [
   {
+    title: 'E³ — Étudiants · Écoles · Entreprises',
+    subtitle: 'Plateforme nationale éducation-recrutement (Projet Ndamli)',
+    bg: '/images/work-1.jpg',
+    problem:
+      'Connecter la formation à l\'emploi au Sénégal : permettre aux étudiants de valoriser leurs compétences vérifiées, aux écoles de suivre leurs diplômés, et aux entreprises de recruter efficacement.',
+    tech: ['Django REST Framework', 'React', 'PostgreSQL', 'Docker'],
+    features:
+      'Profils vérifiés, offres de stage/emploi, suivi des candidatures en temps réel, délivrance de badges de compétences et architecture conteneurisée.',
+    link: null,
+    site: null,
+    linkType: 'private',
+  },
+  {
     title: 'DistriManager',
     subtitle: 'Gestion intégrée pour une entreprise de distribution',
     bg: '/images/work-2.jpg',
