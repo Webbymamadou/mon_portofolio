@@ -4,6 +4,7 @@ import useScroll from '../hooks/useScroll';
 const NAV_ITEMS = [
   { id: 'accueil-section', label: 'Accueil' },
   { id: 'apropos-section', label: 'À propos' },
+  { id: 'experience-section', label: 'Expérience' },
   { id: 'competence-section', label: 'Compétences' },
   { id: 'services-section', label: 'Services' },
   { id: 'projects-section', label: 'Projets' },
