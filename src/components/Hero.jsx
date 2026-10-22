@@ -91,7 +91,7 @@ export default function Hero() {
                   <p className="mb-4" style={{ fontFamily: '"Times New Roman", Times, serif', fontSize: '18px', lineHeight: '1.5' }}>
                     Développeur backend Python, je conçois des API et des architectures propres, de la modélisation des bases de données jusqu’au déploiement. Étudiant en Licence 3 d’Informatique Appliquée à la Gestion des Entreprises (IAGE) à l’ISI Dakar, j’allie rigueur technique et culture DevOps.
                     Stagiaire développeur backend chez Formuloo, je travaille à distance avec des développeurs seniors, en méthode Agile/Scrum avec Jira, et j’y renforce mes bases en Django REST Framework.
-                      Je cherche une alternance ou un stage en développement backend Python pour rejoindre une équipe ambitieuse en janvier 2027.
+                      Je cherche une alternance ou un stage en développement backend Python pour rejoindre une équipe ambitieuse dès décembre 2026.
                   </p>
                   <p style={{ marginTop: '40px' }}>
                     <a href="#projects-section" onClick={(e) => handleScrollTo(e, 'projects-section')} className="btn btn-primary mr-2">
