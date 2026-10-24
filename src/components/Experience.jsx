@@ -121,7 +121,7 @@ const EXPERIENCES = [
     id: 'distrimanager',
     type: 'mission',
     status: 'in_progress',
-    statusLabel: 'Terminée',
+    statusLabel: 'Finalisation',
     role: 'Architecte & Développeur Backend',
     company: 'Entreprise de Distribution',
     location: 'Sénégal',
@@ -163,7 +163,7 @@ export default function Experience() {
   });
 
   const handleCardToggle = (id, e) => {
-    // Si l'utilisateur clique sur un lien (ex: bouton Visiter), laisser le lien agir
+    // Si l'utilisateur clique sur un lien externe, laisser le lien s'ouvrir sans refermer
     if (e.target.closest('a')) return;
     setExpandedId((prev) => (prev === id ? null : id));
   };
@@ -178,7 +178,7 @@ export default function Experience() {
             <h2 className="mb-4">Expériences &amp; Missions</h2>
             <p className="experience-intro">
               Stages en entreprise, missions de développement d’applications et diagnostics de besoins métiers. 
-              Survolez ou appuyez sur une carte pour explorer les détails, missions et technologies.
+              Survolez ou touchez une carte pour explorer les missions, architectures et technologies mobilisées.
             </p>
           </div>
         </div>
@@ -267,13 +267,14 @@ export default function Experience() {
                         <span
                           className={`exp-toggle-icon ${isExpanded ? 'open' : ''}`}
                           aria-hidden="true"
+                          title={isExpanded ? 'Réduire' : 'Afficher les détails'}
                         >
                           <i className="fa fa-chevron-down" />
                         </span>
                       </div>
                     </div>
 
-                    {/* Contenu détaillé (développé au survol sur PC ou au clic sur mobile) */}
+                    {/* Contenu détaillé (développé progressivement au survol sur PC ou au tap sur mobile) */}
                     <AnimatePresence initial={false}>
                       {isExpanded && (
                         <motion.div
@@ -427,7 +428,7 @@ export default function Experience() {
         .experience-grid {
           display: flex;
           flex-direction: column;
-          gap: 20px;
+          gap: 18px;
           max-width: 980px;
           margin: 0 auto;
         }
