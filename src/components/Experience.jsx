@@ -120,8 +120,8 @@ const EXPERIENCES = [
   {
     id: 'distrimanager',
     type: 'mission',
-    status: 'in_progress',
-    statusLabel: 'Finalisation',
+    status: 'completed',
+    statusLabel: 'Terminée',
     role: 'Architecte & Développeur Backend',
     company: 'Entreprise de Distribution',
     location: 'Sénégal',
