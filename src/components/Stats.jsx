@@ -8,7 +8,7 @@ function StatItem({ icon, target, text, trigger, duration, prefix = '', suffix =
     <div className="col-md-3 justify-content-center counter-wrap">
       <div className="block-18 d-flex">
         <div className="icon d-flex justify-content-center align-items-center">
-          <span className={icon}></span>
+          <span className={icon} aria-hidden="true"></span>
         </div>
         <div className="text">
           <strong className="number">{prefix}{count}{suffix}</strong>
@@ -22,12 +22,12 @@ function StatItem({ icon, target, text, trigger, duration, prefix = '', suffix =
 export default function Stats() {
   const [ref, isVisible] = useIntersection({ threshold: 0.1, triggerOnce: true });
 
-const stats = [
-  { icon: 'flaticon-check', target: 100, suffix: '%', text: 'Code propre et relu', duration: 1500 },
-  { icon: 'flaticon-team', target: 100, suffix: '%', text: 'Esprit d’équipe', duration: 1500 },
-  { icon: 'flaticon-code', target: 24, suffix: '/7', text: 'Passion pour le backend', duration: 1500 },
-  { icon: 'flaticon-calendar', target: 2026, suffix: '', text: '1 objectif Rejoindre une équipe et y grandir', duration: 2500 },
-];
+  const stats = [
+    { icon: 'fa fa-check-circle', target: 100, suffix: '%', text: 'Code propre et relu', duration: 1500 },
+    { icon: 'fa fa-users', target: 100, suffix: '%', text: 'Esprit d’équipe', duration: 1500 },
+    { icon: 'fa fa-code', target: 24, suffix: '/7', text: 'Passion pour le backend', duration: 1500 },
+    { icon: 'fa fa-bullseye', target: 2026, suffix: '', text: '1 objectif Rejoindre une équipe et y grandir', duration: 2500 },
+  ];
 
   return (
     <section ref={ref} className="ftco-counter img bg-light" id="section-counter">
@@ -47,6 +47,17 @@ const stats = [
           ))}
         </div>
       </div>
+      <style>{`
+        #section-counter .icon span.fa {
+          font-size: 26px;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: 100%;
+        }
+      `}</style>
     </section>
   );
 }
